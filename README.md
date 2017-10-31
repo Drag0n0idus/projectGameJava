@@ -7,10 +7,10 @@ I still have to think of a way to make combat. I know it will be turn-based (som
 
 ## What I have planned to do and whats already done
 ### Combat
-- [ ] Damage counting (**How equipment affects damage output, armor, health**)
-- [ ] Status effects (**How to get an enemy to skip a turn when stunned, how much damage to take of when poisoned, bleeding etc.**)
+- [ ] Damage counting (*How equipment affects damage output, armor, health*)
+- [ ] Status effects (*How to get an enemy to skip a turn when stunned, how much damage to take of when poisoned, bleeding etc.*)
 ### World
-- [ ] Creating a map (**Make a grid-map, get it into a two dimensional array, define positions etc.**)
-- [ ] Movement (**How to move on said map**)
+- [ ] Creating a map (*Make a grid-map, get it into a two dimensional array, define positions etc.*)
+- [ ] Movement (*How to move on said map*)
 ### Equipment
-- [ ] Drop chance (**Defining how often loot will drop and what rarity (strength) it will be**)
+- [ ] Drop chance (*Defining how often loot will drop and what rarity (strength) it will be*)
