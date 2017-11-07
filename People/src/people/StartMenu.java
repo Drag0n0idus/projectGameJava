@@ -7,7 +7,7 @@ package people;
 
 /**
  *
- * @author student
+ * @author František Lukeš
  */
 public class StartMenu extends javax.swing.JFrame {
 

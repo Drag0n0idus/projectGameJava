@@ -5,11 +5,9 @@
  */
 package people;
 
-import java.awt.Color;
-
 /**
  * Třída Human
- * @author ucitel
+ * @author Richard Míček (borrowed)
  */
 public class Human {
     /* Vlastní výčtový typ */
@@ -24,6 +22,10 @@ public class Human {
     private int constitution = 0;
     private Sex sex = Sex.MAN;
 
+    public Human(String name){
+        this.setName(name);
+    }
+    
     public String getName() {
         return name;
     }
