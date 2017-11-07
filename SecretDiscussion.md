@@ -9,7 +9,7 @@
 
 ## Richard
 * Class & Race creation
-
+>Sort of finished I guess
 
 # What atrributes?
 * Strength      (10 | W + 3 | R + 1 | M - 2)
