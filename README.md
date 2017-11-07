@@ -7,10 +7,11 @@ I still have to think of a way to make combat. I know it will be turn-based (som
 
 ## What I have planned to do and whats already done
 ### Classes & Races
-- [x] Race Human (*Base atrributes for the human race*)
+- [x] Race Human (*Base atrributes for the human race*) [*Work of Richard*]
+- [x] Classes (*Mage, Warrior, Ranger - which attributes are better or worse for each class*) [*Work of Richard*]
 ### Menu design
-- [x] Start menu
-- [ ] Character Menu
+- [x] Start menu [*Work of Franta*]
+- [ ] Character Menu [*Work of Franta*]
 ### Combat
 - [ ] Damage counting (*How equipment affects damage output, armor, health*)
 - [ ] Status effects (*How to get an enemy to skip a turn when stunned, how much damage to take of when poisoned, bleeding etc.*)
