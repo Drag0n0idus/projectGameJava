@@ -9,3 +9,10 @@
 
 ## Richard
 * Class & Race creation
+
+
+# What atrributes?
+* Strength      (10 | W + 3 | R + 1 | M - 2)
+* Dexterity     (10 | W - 2 | R + 3 | M + 1)
+* Intelligence  (10 | W + 1 | R - 2 | M + 3)
+* Constitution  ( 0 | W + 2 | R + 1 | M + 0)
