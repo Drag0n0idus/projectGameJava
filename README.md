@@ -6,6 +6,8 @@ The plan is to make a grid-map, have a main class for the human race, subclasses
 I still have to think of a way to make combat. I know it will be turn-based (somewhat easier to make), but the details are yet to be fleshed out.
 
 ## What I have planned to do and whats already done
+### Classes & Races
+- [x] Race Human (*Base atrributes for the human race*)
 ### Menu design
 - [x] Start menu
 - [ ] Character Menu
