@@ -92,7 +92,7 @@ public class PersonDialog extends javax.swing.JDialog {
 
         jLabel2.setText("Věk");
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setText("Váha");
 
         weight.setMajorTickSpacing(10);
         weight.setMaximum(150);
@@ -126,7 +126,7 @@ public class PersonDialog extends javax.swing.JDialog {
                             .addComponent(jLabel3))
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(weight, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                            .addComponent(weight, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
