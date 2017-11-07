@@ -13,7 +13,7 @@ import javax.swing.DefaultListModel;
 
 /**
  *
- * @author student
+ * @author ucitel
  */
 public class Window extends javax.swing.JFrame {
 
@@ -36,34 +36,35 @@ public class Window extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PopupMenu = new javax.swing.JPopupMenu();
-        removeMenuItem = new javax.swing.JMenuItem();
-        removeAllMenuItem = new javax.swing.JMenuItem();
+        popupMenu = new javax.swing.JPopupMenu();
+        removeMenu = new javax.swing.JMenuItem();
+        removeAllMenu = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenuItem();
         openFileMenu = new javax.swing.JMenuItem();
         saveFileMenu = new javax.swing.JMenuItem();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        peopleList = new javax.swing.JList<>();
         nameTextField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         addButton = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        peopleList = new javax.swing.JList<>();
-        ChoiceBox = new javax.swing.JComboBox<>();
+        selectPerson = new javax.swing.JComboBox<>();
 
-        removeMenuItem.setText("Odstranit");
-        removeMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        removeMenu.setText("Odstranit");
+        removeMenu.setToolTipText("Odstraní označený objekt");
+        removeMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removeMenuItemActionPerformed(evt);
+                removeMenuActionPerformed(evt);
             }
         });
-        PopupMenu.add(removeMenuItem);
+        popupMenu.add(removeMenu);
 
-        removeAllMenuItem.setText("Odstranit vše");
-        removeAllMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        removeAllMenu.setText("Smazat vše");
+        removeAllMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removeAllMenuItemActionPerformed(evt);
+                removeAllMenuActionPerformed(evt);
             }
         });
-        PopupMenu.add(removeAllMenuItem);
+        popupMenu.add(removeAllMenu);
 
         editMenu.setText("Editovat");
         editMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -71,15 +72,15 @@ public class Window extends javax.swing.JFrame {
                 editMenuActionPerformed(evt);
             }
         });
-        PopupMenu.add(editMenu);
+        popupMenu.add(editMenu);
 
-        openFileMenu.setText("Načíst ze souboru");
+        openFileMenu.setText("Otevřít ze souboru");
         openFileMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openFileMenuActionPerformed(evt);
             }
         });
-        PopupMenu.add(openFileMenu);
+        popupMenu.add(openFileMenu);
 
         saveFileMenu.setText("Uložit do souboru");
         saveFileMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -87,16 +88,14 @@ public class Window extends javax.swing.JFrame {
                 saveFileMenuActionPerformed(evt);
             }
         });
-        PopupMenu.add(saveFileMenu);
+        popupMenu.add(saveFileMenu);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        peopleList.setComponentPopupMenu(popupMenu);
+        jScrollPane1.setViewportView(peopleList);
+
         nameTextField.setToolTipText("Zadej jméno");
-        nameTextField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                nameTextFieldKeyPressed(evt);
-            }
-        });
 
         jLabel1.setText("Jméno osoby");
 
@@ -107,95 +106,84 @@ public class Window extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane1.setComponentPopupMenu(PopupMenu);
-
-        peopleList.setComponentPopupMenu(PopupMenu);
-        jScrollPane1.setViewportView(peopleList);
-
-        ChoiceBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Human", "Sportsman", "TennisPlayer" }));
+        selectPerson.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Human", "Sportsman" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-                            .addComponent(nameTextField))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(nameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ChoiceBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(37, 37, 37))))
+                            .addComponent(selectPerson, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ChoiceBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(selectPerson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addButton))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addGap(81, 81, 81))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        if (ChoiceBox.getSelectedItem() == "Human") {
-            model.addElement(new Human(nameTextField.getText()));
-        } else if (ChoiceBox.getSelectedItem() == "Sportsman") {
-            model.addElement(new Sportsman(nameTextField.getText()));
+        Human clovek;
+        if (selectPerson.getSelectedItem() == "Human") {
+            clovek = new Human(nameTextField.getText());
         } else {
-            model.addElement(new TennisPlayer(nameTextField.getText()));
+            clovek = new Sportsman(nameTextField.getText());
         }
+        model.addElement(clovek);
     }//GEN-LAST:event_addButtonActionPerformed
 
-    private void nameTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameTextFieldKeyPressed
-        // TODO dd your handling code here:
-    }//GEN-LAST:event_nameTextFieldKeyPressed
-
-    private void removeMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeMenuItemActionPerformed
+    private void removeMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeMenuActionPerformed
         int selectedIndex = peopleList.getSelectedIndex();
         if (selectedIndex != -1) {
             model.remove(selectedIndex);
         }
-    }//GEN-LAST:event_removeMenuItemActionPerformed
+    }//GEN-LAST:event_removeMenuActionPerformed
 
-    private void removeAllMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeAllMenuItemActionPerformed
+    private void removeAllMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeAllMenuActionPerformed
         model.removeAllElements();
-    }//GEN-LAST:event_removeAllMenuItemActionPerformed
+    }//GEN-LAST:event_removeAllMenuActionPerformed
 
     private void editMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editMenuActionPerformed
         if (peopleList.getSelectedIndex() > -1) {
             Human person = (Human) model.get(peopleList.getSelectedIndex());
             PersonDialog dialog = new PersonDialog(this, true, person);
             if (dialog.showDialog().equalsIgnoreCase("OK")) {
-                model.setElementAt(dialog.getPerson(), peopleList.getSelectedIndex());
+                model.setElementAt(dialog.getPerson(),
+                        peopleList.getSelectedIndex());
             }
         }
     }//GEN-LAST:event_editMenuActionPerformed
 
     private void saveFileMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveFileMenuActionPerformed
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("soubor.csv"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("soubor.txt"))) {
             bw.write("class;name;age;height;weight;sex");
             bw.newLine();
             for (int i = 0; i < model.getSize(); i++) {
                 Human person = (Human) model.get(i);
-                String pokus = person.getClass().getSimpleName();
-                String output = pokus + ";"
+                String output = person.getClass().getSimpleName() + ";"
                         + person.getName() + ";"
                         + person.getAge() + ";"
                         + person.getHeight() + ";"
@@ -213,27 +201,34 @@ public class Window extends javax.swing.JFrame {
     }//GEN-LAST:event_saveFileMenuActionPerformed
 
     private void openFileMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openFileMenuActionPerformed
-        try (BufferedReader br = new BufferedReader(new FileReader("soubor.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("soubor.txt"))) {
             String s;
             int i = 0;
+            model.clear();
             while ((s = br.readLine()) != null) {
-                if(i > 0){
-                    String[] attr = s.split(";");     
-                    Human person = new Human(attr[1]); 
+                if (i > 0) {
+                    String[] attr = s.split(";");
+                    Human person;
+                    if (attr[0].equalsIgnoreCase("SPORTSMAN")) {
+                        person = new Sportsman(attr[1]);
+                    } else {
+                        person = new Human(attr[1]);
+                    }
                     person.setAge(Integer.parseInt(attr[2]));
-                    person.setWeight(Integer.parseInt(attr[4]));
                     person.setHeight(Float.parseFloat(attr[3]));
-                    if(attr[5] == "MAN")
+                    person.setWeight(Integer.parseInt(attr[4]));
+                    if (attr[5] == "MAN") {
                         person.setSex(Human.Sex.MAN);
-                    else
+                    } else {
                         person.setSex(Human.Sex.WOMAN);
+                    }
                     model.addElement(person);
                 }
                 i++;
             }
         } catch (Exception e) {
-            System.err.println("Chyba při čtení ze souboru.");
-        }
+            System.err.println("Chyba při četení ze souboru.");
+        }        // TODO add your handling code here:
     }//GEN-LAST:event_openFileMenuActionPerformed
 
     /**
@@ -272,8 +267,6 @@ public class Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ChoiceBox;
-    private javax.swing.JPopupMenu PopupMenu;
     private javax.swing.JButton addButton;
     private javax.swing.JMenuItem editMenu;
     private javax.swing.JLabel jLabel1;
@@ -281,8 +274,10 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JTextField nameTextField;
     private javax.swing.JMenuItem openFileMenu;
     private javax.swing.JList<String> peopleList;
-    private javax.swing.JMenuItem removeAllMenuItem;
-    private javax.swing.JMenuItem removeMenuItem;
+    private javax.swing.JPopupMenu popupMenu;
+    private javax.swing.JMenuItem removeAllMenu;
+    private javax.swing.JMenuItem removeMenu;
     private javax.swing.JMenuItem saveFileMenu;
+    private javax.swing.JComboBox<String> selectPerson;
     // End of variables declaration//GEN-END:variables
 }

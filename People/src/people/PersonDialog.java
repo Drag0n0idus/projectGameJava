@@ -5,13 +5,16 @@
  */
 package people;
 
+import people.Human.Sex;
+
 /**
  *
- * @author student
+ * @author ucitel
  */
 public class PersonDialog extends javax.swing.JDialog {
     private Human person;
     private String actionButton = "Storno";
+    
     /**
      * Creates new form PersonDialog
      */
@@ -19,25 +22,33 @@ public class PersonDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.person = person;
-        nameTextField.setText(person.getName());
-        ageSpinner.setValue(person.getAge());
-        weightSlider.setValue(person.getWeight());
-//        heightSlider.setValue((int)(person.getHeight());
-        
+        name.setText(person.getName());
+        age.setValue(person.getAge());
+        weight.setValue(person.getWeight());
+        if (person.getSex() == Sex.MAN) {
+            manButton.setSelected(true);
+        } else {
+            womanButton.setSelected(true);            
+        }
     }
-
+    
     public String showDialog() {
         this.setVisible(true);
         return actionButton;
     }
     
-    public Human getPerson() {
-        this.person.setName(nameTextField.getText());
-        this.person.setAge((int)ageSpinner.getValue());
-        this.person.setWeight(weightSlider.getValue());
-        this.person.setHeight(heightSlider.getValue());
+    public Human getPerson(){
+        this.person.setName(name.getText());
+        this.person.setAge((int)age.getValue());
+        this.person.setWeight((int)weight.getValue());
+        if (manButton.isSelected()) {
+            this.person.setSex(Sex.MAN);
+        } else {
+            this.person.setSex(Sex.WOMAN);
+        }
         return this.person;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,30 +58,28 @@ public class PersonDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        nameTextField = new javax.swing.JTextField();
+        sexButtonGroup = new javax.swing.ButtonGroup();
+        name = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        OkButton = new javax.swing.JButton();
+        OKButton = new javax.swing.JButton();
         CancelButton = new javax.swing.JButton();
-        ageSpinner = new javax.swing.JSpinner();
+        age = new javax.swing.JSpinner();
         jLabel2 = new javax.swing.JLabel();
-        weightSlider = new javax.swing.JSlider();
         jLabel3 = new javax.swing.JLabel();
-        heightSlider = new javax.swing.JSlider();
-        jLabel4 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
+        weight = new javax.swing.JSlider();
+        manButton = new javax.swing.JRadioButton();
+        womanButton = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setModal(true);
 
         jLabel1.setText("Jméno");
 
-        OkButton.setText("OK");
-        OkButton.addActionListener(new java.awt.event.ActionListener() {
+        OKButton.setText("OK");
+        OKButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OkButtonActionPerformed(evt);
+                OKButtonActionPerformed(evt);
             }
         });
 
@@ -83,103 +92,88 @@ public class PersonDialog extends javax.swing.JDialog {
 
         jLabel2.setText("Věk");
 
-        weightSlider.setMajorTickSpacing(10);
-        weightSlider.setMaximum(150);
-        weightSlider.setMinimum(50);
-        weightSlider.setMinorTickSpacing(5);
-        weightSlider.setPaintLabels(true);
-        weightSlider.setPaintTicks(true);
-        weightSlider.setSnapToTicks(true);
+        jLabel3.setText("jLabel3");
 
-        jLabel3.setText("Váha");
+        weight.setMajorTickSpacing(10);
+        weight.setMaximum(150);
+        weight.setMinimum(50);
+        weight.setMinorTickSpacing(1);
+        weight.setPaintLabels(true);
+        weight.setPaintTicks(true);
 
-        heightSlider.setMajorTickSpacing(10);
-        heightSlider.setMaximum(200);
-        heightSlider.setMinimum(100);
-        heightSlider.setMinorTickSpacing(5);
-        heightSlider.setPaintLabels(true);
-        heightSlider.setPaintTicks(true);
-        heightSlider.setSnapToTicks(true);
+        sexButtonGroup.add(manButton);
+        manButton.setText("muž");
 
-        jLabel4.setText("Výška");
-
-        jRadioButton1.setText("Muž");
-
-        jRadioButton2.setText("Žena");
-
-        jLabel5.setText("Pohlaví");
+        sexButtonGroup.add(womanButton);
+        womanButton.setText("žena");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(CancelButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(OkButton))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
+                        .addGap(97, 97, 97)
+                        .addComponent(OKButton)
+                        .addGap(28, 28, 28)
+                        .addComponent(CancelButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(weight, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton2)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(ageSpinner, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
-                            .addComponent(nameTextField)
-                            .addComponent(weightSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
-                            .addComponent(heightSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(31, 31, 31))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(age)
+                                            .addGap(128, 128, 128)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(manButton)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(womanButton)))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ageSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(weightSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(heightSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(weight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                    .addComponent(manButton)
+                    .addComponent(womanButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(OkButton)
+                    .addComponent(OKButton)
                     .addComponent(CancelButton))
-                .addGap(30, 30, 30))
+                .addGap(25, 25, 25))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void OkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkButtonActionPerformed
+    private void OKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKButtonActionPerformed
         actionButton = "OK";
         this.dispose();
-    }//GEN-LAST:event_OkButtonActionPerformed
+    }//GEN-LAST:event_OKButtonActionPerformed
 
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
         actionButton = "Storno";
@@ -189,18 +183,15 @@ public class PersonDialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CancelButton;
-    private javax.swing.JButton OkButton;
-    private javax.swing.JSpinner ageSpinner;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JSlider heightSlider;
+    private javax.swing.JButton OKButton;
+    private javax.swing.JSpinner age;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField nameTextField;
-    private javax.swing.JSlider weightSlider;
+    private javax.swing.JRadioButton manButton;
+    private javax.swing.JTextField name;
+    private javax.swing.ButtonGroup sexButtonGroup;
+    private javax.swing.JSlider weight;
+    private javax.swing.JRadioButton womanButton;
     // End of variables declaration//GEN-END:variables
 }

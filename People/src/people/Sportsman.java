@@ -7,12 +7,12 @@ package people;
 
 /**
  *
- * @author student
+ * @author ucitel
  */
 public class Sportsman extends Human {
     private int energy = 15000;
     private double steroid = 0;
-    
+
     public Sportsman(String jmeno) {
         super(jmeno);
     }
@@ -42,6 +42,7 @@ public class Sportsman extends Human {
     public String toString() {
         return super.toString() + "[Sportsman]";
     }
+    
     
     
 }

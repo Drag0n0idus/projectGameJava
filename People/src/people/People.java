@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author student
+ * @author ucitel
  */
 public class People {
 
@@ -18,23 +18,23 @@ public class People {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Human student = new Human("Hugo", 59, Human.Sex.MAN);
-        student.setWeight(72);
-        //System.out.println(student.toString());
-        Human studentka = new Human("Hildegarda", 18, Human.Sex.WOMAN);
-        studentka.setWeight(38);
-        studentka.setHeight(1.52f);
-        //System.out.println(studentka.toString());
-        Human tenista = new TennisPlayer("Roger", 30000, 93, 49, 0.65f);
-        tenista.setAge(36);
-        tenista.setWeight(85);
-        tenista.setHeight(1.85f);
-        //System.out.println(tenista.toString());
-        
-        List<Human> lide = new ArrayList<Human>();
+        Human student = new Human("Hugo", 18, Human.Sex.MAN);
+        student.setWeight(72); 
+
+        Human studentka = new Human("Hilda", 17, Human.Sex.WOMAN);
+        studentka.setWeight(55); 
+        studentka.setHeight(1.75f); 
+
+        Human sportovec = new Hockeyplayer("Jarda",20000);
+        sportovec.setAge(45);
+        sportovec.setHeight(189);
+        sportovec.setWeight(102);
+        ((Hockeyplayer) sportovec).setGoals(10);
+
+        List<Human> lide = new ArrayList<Human>(); 
+        lide.add(sportovec);
         lide.add(student);
         lide.add(studentka);
-        lide.add(tenista);
         
         for(Human clovek : lide) {
             System.out.println(clovek.toString());
