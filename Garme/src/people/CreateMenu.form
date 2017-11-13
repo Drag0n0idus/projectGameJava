@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="classButtonGroup">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="sexButtonGroup">
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="createNewButton" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace pref="226" max="32767" attributes="0"/>
+                      <Component id="backButton" min="-2" pref="100" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="sexLabel" min="-2" pref="75" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="maleButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="femaleButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="nameLabel" min="-2" pref="75" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="nameTextField" min="-2" pref="120" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="classLabel" min="-2" pref="75" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="warriorButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="wStrenght" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="wDexterity" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="wIntelligence" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="mageButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mStrenght" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mDexterity" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="mIntelligence" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="wConstitution" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="mConstitution" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="rangerButton" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="rStrenght" min="-2" max="-2" attributes="0"/>
+                                          <Component id="rDexterity" min="-2" max="-2" attributes="0"/>
+                                          <Component id="rIntelligence" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="rConstitution" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="nameLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="nameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="sexLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="maleButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="femaleButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="classLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="warriorButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="mageButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="rangerButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="mStrenght" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rStrenght" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="wStrenght" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="mDexterity" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rDexterity" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="wDexterity" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="mIntelligence" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rIntelligence" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="wIntelligence" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="rConstitution" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="wConstitution" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="mConstitution" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="77" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="backButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="createNewButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="nameLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Name"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="nameTextField">
+    </Component>
+    <Component class="javax.swing.JButton" name="backButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Back"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="classLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Class"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="sexLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sex"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="warriorButton">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="classButtonGroup"/>
+        </Property>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="Warrior"/>
+      </Properties>
+      <Events>
+        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="warriorButtonStateChanged"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="mageButton">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="classButtonGroup"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Mage"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="rangerButton">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="classButtonGroup"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ranger"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="maleButton">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="sexButtonGroup"/>
+        </Property>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="Male"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="femaleButton">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="sexButtonGroup"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Female"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="createNewButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Create"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createNewButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="wStrenght">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Strenght: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="mStrenght">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Strenght: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="rStrenght">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Strenght: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="wDexterity">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dexterity: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="mDexterity">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dexterity: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="rDexterity">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dexterity: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="wIntelligence">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Intelligence: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="mIntelligence">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Intelligence: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="rIntelligence">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Intelligence: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="wConstitution">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Constitution: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="mConstitution">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Constitution: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="rConstitution">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Constitution: "/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
