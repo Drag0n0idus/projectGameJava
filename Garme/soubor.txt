@@ -1,3 +1,4 @@
-class;name;age;height;weight;sex
-Human;asasd;20;1.8;70;MAN
-Sportsman;asasd;20;1.8;70;WOMAN
+class;name;strength;dexterity;intelligence;constitution;sex
+Warrior;jjj;13;8;11;2;MAN
+Warrior;john;13;8;11;2;WOMAN
+Warrior;mama;13;8;11;2;WOMAN

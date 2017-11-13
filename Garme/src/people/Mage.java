@@ -10,14 +10,14 @@ package people;
  * @author Richard Míček
  */
 public class Mage extends Human {
-    private int str = 2;
+    private int str = -2;
     private int dxt = 1;
     private int intel = 3;
     private String specialization = "MAGE";
 
     public Mage(String jmeno) {
         super(jmeno);
-        this.setStrength(super.getStrength() - str);
+        this.setStrength(super.getStrength() + str);
         this.setDexterity(super.getDexterity() + dxt);
         this.setIntelligence(super.getIntelligence() + intel);
     }

@@ -37,6 +37,10 @@ public class Human {
     public int getStrength() {
         return strength;
     }
+    
+    public String getStrengthS() {
+        return Integer.toString(this.getStrength());
+    }
 
     public void setStrength(int strength) {
         this.strength = strength;
@@ -44,6 +48,10 @@ public class Human {
 
     public int getDexterity() {
         return dexterity;
+    }
+    
+    public String getDexterityS() {
+        return Integer.toString(this.getDexterity());
     }
 
     public void setDexterity(int dexterity) {
@@ -53,6 +61,10 @@ public class Human {
     public int getIntelligence() {
         return intelligence;
     }
+    
+    public String getIntelligenceS() {
+        return Integer.toString(this.getIntelligence());
+    }
 
     public void setIntelligence(int intelligence) {
         this.intelligence = intelligence;
@@ -60,6 +72,10 @@ public class Human {
 
     public int getConstitution() {
         return constitution;
+    }
+    
+    public String getConstitutionS() {
+        return Integer.toString(this.getConstitution());
     }
 
     public void setConstitution(int constitution) {

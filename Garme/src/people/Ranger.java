@@ -12,7 +12,7 @@ package people;
 public class Ranger extends Human {
     private int str = 1;
     private int dxt = 3;
-    private int intel = 2;
+    private int intel = -2;
     private int con = 1;
     private String specialization = "RANGER";
 
@@ -20,7 +20,7 @@ public class Ranger extends Human {
         super(jmeno);
         this.setStrength(super.getStrength() + str);
         this.setDexterity(super.getDexterity() + dxt);
-        this.setIntelligence(super.getIntelligence() - intel);
+        this.setIntelligence(super.getIntelligence() + intel);
         this.setConstitution(super.getConstitution() + con);
     }
 

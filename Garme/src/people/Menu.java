@@ -34,6 +34,11 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         createButton.setText("Create Character");
+        createButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createButtonActionPerformed(evt);
+            }
+        });
 
         loadButton.setText("Existing Characters");
 
@@ -79,6 +84,12 @@ public class Menu extends javax.swing.JFrame {
         setVisible(false);
         dispose();
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void createButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createButtonActionPerformed
+        new CreateMenu().setVisible(true);
+        setVisible(false);
+        dispose();
+    }//GEN-LAST:event_createButtonActionPerformed
 
     /**
      * @param args the command line arguments

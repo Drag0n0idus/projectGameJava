@@ -11,7 +11,7 @@ package people;
  */
 public class Warrior extends Human {
     private int str = 3;
-    private int dxt = 2;
+    private int dxt = -2;
     private int intel = 1;
     private int con = 2;
     private String specialization = "WARRIOR";
@@ -19,7 +19,7 @@ public class Warrior extends Human {
     public Warrior(String jmeno) {
         super(jmeno);
         this.setStrength(super.getStrength() + str);
-        this.setDexterity(super.getDexterity() - dxt);
+        this.setDexterity(super.getDexterity() + dxt);
         this.setIntelligence(super.getIntelligence() + intel);
         this.setConstitution(super.getConstitution() + con);
     }
