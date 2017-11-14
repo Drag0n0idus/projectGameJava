@@ -15,6 +15,8 @@ I still have to think of a way to make combat. I know it will be turn-based (som
 - [x] Load window [*Work of Both*]
 - [ ] Character Menu [*Work of Franta*]
 ### Combat
+- [x] Weapon classes [*Work of Richard*]
+- [x] Armor classes [*Work of Richard*]
 - [ ] Damage counting (*How equipment affects damage output, armor, health*)
 - [ ] Status effects (*How to get an enemy to skip a turn when stunned, how much damage to take of when poisoned, bleeding etc.*)
 ### World
