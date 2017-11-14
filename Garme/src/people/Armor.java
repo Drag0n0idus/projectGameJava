@@ -7,7 +7,7 @@ package people;
 
 /**
  *
- * @author Drag0n0idus
+ * @author Richard
  */
 public class Armor {
     public enum Type {

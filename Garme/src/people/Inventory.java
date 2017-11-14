@@ -7,7 +7,7 @@ package people;
 
 /**
  *
- * @author Drag0n0idus
+ * @author František
  */
 public class Inventory extends javax.swing.JFrame {
 

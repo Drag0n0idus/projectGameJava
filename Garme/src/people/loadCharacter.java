@@ -14,7 +14,7 @@ import people.Human.Sex;
 
 /**
  *
- * @author student
+ * @author Both
  */
 public class loadCharacter extends javax.swing.JFrame {
     private Human character;

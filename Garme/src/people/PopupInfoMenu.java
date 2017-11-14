@@ -7,7 +7,7 @@ package people;
 
 /**
  *
- * @author student
+ * @author Both
  */
 public class PopupInfoMenu extends javax.swing.JFrame {
 

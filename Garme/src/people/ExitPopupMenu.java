@@ -7,7 +7,7 @@ package people;
 
 /**
  *
- * @author Drag0n0idus
+ * @author Both
  */
 public class ExitPopupMenu extends javax.swing.JFrame {
 
