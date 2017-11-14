@@ -15,26 +15,12 @@ import java.io.FileWriter;
  * @author František
  */
 public class CreateMenu extends javax.swing.JFrame {
-    private Warrior warrior = new Warrior("w");
-    private Mage mage = new Mage("m");
-    private Ranger ranger = new Ranger("r");
+    private Human character;
     /**
      * Creates new form CreateMenu
      */
     public CreateMenu() {
         initComponents();
-        wStrenght.setText("Strength: " + warrior.getStrengthS());
-        wDexterity.setText("Dexterity: " + warrior.getDexterityS());
-        wIntelligence.setText("Intelligence: " + warrior.getIntelligenceS());
-        wConstitution.setText("Constitution: " + warrior.getConstitutionS());
-        mStrenght.setText("Strength: " + mage.getStrengthS());
-        mDexterity.setText("Dexterity: " + mage.getDexterityS());
-        mIntelligence.setText("Intelligence: " + mage.getIntelligenceS());
-        mConstitution.setText("Constitution: " + mage.getConstitutionS());
-        rStrenght.setText("Strength: " + ranger.getStrengthS());
-        rDexterity.setText("Dexterity: " + ranger.getDexterityS());
-        rIntelligence.setText("Intelligence: " + ranger.getIntelligenceS());
-        rConstitution.setText("Constitution: " + ranger.getConstitutionS());
     }
 
     /**
@@ -71,7 +57,6 @@ public class CreateMenu extends javax.swing.JFrame {
         wConstitution = new javax.swing.JLabel();
         mConstitution = new javax.swing.JLabel();
         rConstitution = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -141,13 +126,6 @@ public class CreateMenu extends javax.swing.JFrame {
 
         rConstitution.setText("Constitution: ");
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -177,35 +155,30 @@ public class CreateMenu extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(warriorButton)
-                                                    .addComponent(wStrenght)
-                                                    .addComponent(wDexterity)
-                                                    .addComponent(wIntelligence))
-                                                .addGap(21, 21, 21)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(mageButton)
-                                                    .addComponent(mStrenght)
-                                                    .addComponent(mDexterity)
-                                                    .addComponent(mIntelligence)))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(wConstitution)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(mConstitution)))
-                                        .addGap(18, 18, 18)
+                                            .addComponent(warriorButton)
+                                            .addComponent(wStrenght)
+                                            .addComponent(wDexterity)
+                                            .addComponent(wIntelligence))
+                                        .addGap(21, 21, 21)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(rangerButton)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(1, 1, 1)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(rStrenght)
-                                                    .addComponent(rDexterity)
-                                                    .addComponent(rIntelligence)))
-                                            .addComponent(rConstitution)))
+                                            .addComponent(mageButton)
+                                            .addComponent(mStrenght)
+                                            .addComponent(mDexterity)
+                                            .addComponent(mIntelligence)))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(83, 83, 83)
-                                        .addComponent(jButton1)))))
+                                        .addComponent(wConstitution)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(mConstitution)))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rangerButton)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(rStrenght)
+                                            .addComponent(rDexterity)
+                                            .addComponent(rIntelligence)))
+                                    .addComponent(rConstitution))))
                         .addGap(0, 114, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -251,8 +224,7 @@ public class CreateMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(createNewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(createNewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -260,58 +232,64 @@ public class CreateMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        new Menu().setVisible(true);
+        new StartMenu().setVisible(true);
         setVisible(false);
         dispose();
     }//GEN-LAST:event_backButtonActionPerformed
 
-    
+
     private void createNewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewButtonActionPerformed
-        if(mageButton.isSelected()){
-            mage.setName(nameTextField.getText());
-            if(maleButton.isSelected()) mage.setSex(Human.Sex.MAN);
-            else mage.setSex(Human.Sex.WOMAN);
+        if (mageButton.isSelected()) {
+            character = new Mage("m");
+            character.setName(nameTextField.getText());
+            if (maleButton.isSelected()) {
+                character.setSex(Human.Sex.MAN);
+            } else {
+                character.setSex(Human.Sex.WOMAN);
+            }
         }
-        if(warriorButton.isSelected()){
-            warrior.setName(nameTextField.getText());
-            if(maleButton.isSelected()) warrior.setSex(Human.Sex.MAN);
-            else warrior.setSex(Human.Sex.WOMAN);
+        if (warriorButton.isSelected()) {
+            character = new Warrior("w");
+            character.setName(nameTextField.getText());
+            if (maleButton.isSelected()) {
+                character.setSex(Human.Sex.MAN);
+            } else {
+                character.setSex(Human.Sex.WOMAN);
+            }
         }
-        if(rangerButton.isSelected()){
-            ranger.setName(nameTextField.getText());
-            if(maleButton.isSelected()) ranger.setSex(Human.Sex.MAN);
-            else ranger.setSex(Human.Sex.WOMAN);
+        if (rangerButton.isSelected()) {
+            character = new Ranger("r");
+            character.setName(nameTextField.getText());
+            if (maleButton.isSelected()) {
+                character.setSex(Human.Sex.MAN);
+            } else {
+                character.setSex(Human.Sex.WOMAN);
+            }
+        }
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("soubor.txt", true))) {
+            BufferedReader br = new BufferedReader(new FileReader("soubor.txt"));
+            if (br.readLine() == null) {
+                bw.write("class;name;strength;dexterity;intelligence;constitution;sex");
+            }
+            bw.newLine();
+            String output = character.getClass().getSimpleName() + ";"
+                    + character.getName() + ";"
+                    + character.getStrength() + ";"
+                    + character.getDexterity() + ";"
+                    + character.getIntelligence() + ";"
+                    + character.getConstitution() + ";"
+                    + character.getSex();
+            bw.write(output);
+            bw.flush();
+            new PopupInfoMenu(character).setVisible(true);
+        } catch (Exception e) {
+            System.err.println("Do souboru se nepovedlo zapsat.");
         }
     }//GEN-LAST:event_createNewButtonActionPerformed
 
     private void warriorButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_warriorButtonStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_warriorButtonStateChanged
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       try (BufferedWriter bw = new BufferedWriter(new FileWriter("soubor.txt", true))) {
-           BufferedReader br = new BufferedReader(new FileReader("soubor.txt")); 
-           if(br.readLine() == null){
-            bw.write("class;name;strength;dexterity;intelligence;constitution;sex");
-           }
-            bw.newLine();
-                String output = warrior.getClass().getSimpleName() + ";"
-                        + warrior.getName() + ";"
-                        + warrior.getStrength() + ";"
-                        + warrior.getDexterity() + ";"
-                        + warrior.getIntelligence() + ";"
-                        + warrior.getConstitution() + ";"
-                        + warrior.getSex();
-                bw.write(output);
-            bw.flush();
-            new Menu().setVisible(true);
-        setVisible(false);
-        dispose();
-
-        } catch (Exception e) {
-            System.err.println("Do souboru se nepovedlo zapsat.");
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -354,7 +332,6 @@ public class CreateMenu extends javax.swing.JFrame {
     private javax.swing.JLabel classLabel;
     private javax.swing.JButton createNewButton;
     private javax.swing.JRadioButton femaleButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel mConstitution;
     private javax.swing.JLabel mDexterity;
     private javax.swing.JLabel mIntelligence;

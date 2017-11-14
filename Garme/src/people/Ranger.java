@@ -26,5 +26,11 @@ public class Ranger extends Human {
 
     public String getSpecialization() {
         return specialization;
-    }   
+    } 
+    
+    @Override
+    public String toString(){
+        String output = this.getName() + " " + this.getClass().getSimpleName();
+        return output;
+    }
 }
