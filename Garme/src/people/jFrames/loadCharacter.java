@@ -6,8 +6,11 @@
 package people;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import javax.swing.DefaultListModel;
+import people.Human.Sex;
 
 /**
  *
@@ -21,6 +24,7 @@ public class loadCharacter extends javax.swing.JFrame {
      * Creates new form loadCharacter
      */
     public loadCharacter() {
+        setTitle("Load Game");
         initComponents();
         charList.setModel(model);
         try (BufferedReader br = new BufferedReader(new FileReader("soubor.txt"))) {
@@ -45,7 +49,7 @@ public class loadCharacter extends javax.swing.JFrame {
                     character.setDexterity(Integer.parseInt(attr[3]));
                     character.setIntelligence(Integer.parseInt(attr[4]));
                     character.setConstitution(Integer.parseInt(attr[5]));
-                    if (attr[6] == "MAN") {
+                    if (attr[6].equalsIgnoreCase("MAN")) {
                         character.setSex(Human.Sex.MAN);
                     } else {
                         character.setSex(Human.Sex.WOMAN);
@@ -78,6 +82,8 @@ public class loadCharacter extends javax.swing.JFrame {
         dxtLabel = new javax.swing.JLabel();
         intLabel = new javax.swing.JLabel();
         conLabel = new javax.swing.JLabel();
+        genderLabel = new javax.swing.JLabel();
+        deleteButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,6 +120,15 @@ public class loadCharacter extends javax.swing.JFrame {
 
         conLabel.setText("Constitution");
 
+        genderLabel.setText("Gender");
+
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -124,7 +139,8 @@ public class loadCharacter extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 55, Short.MAX_VALUE)
+                        .addComponent(deleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(contButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -133,7 +149,8 @@ public class loadCharacter extends javax.swing.JFrame {
                     .addComponent(strLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(dxtLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(intLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(conLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(conLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(genderLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
@@ -147,6 +164,8 @@ public class loadCharacter extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(classLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(genderLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(strLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(dxtLabel)
@@ -154,9 +173,11 @@ public class loadCharacter extends javax.swing.JFrame {
                         .addComponent(intLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(conLabel)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(contButton)
+                            .addComponent(deleteButton))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(contButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(backButton)))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
@@ -171,13 +192,20 @@ public class loadCharacter extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void contButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contButtonActionPerformed
-        // TODO add your handling code here:
+        if (charList.getSelectedIndex() > -1) {
+            Human person = (Human) model.get(charList.getSelectedIndex());
+            new Inventory(person).setVisible(true);
+            setVisible(false);
+            dispose();
+        }
     }//GEN-LAST:event_contButtonActionPerformed
 
     private void charListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_charListMouseClicked
         if (charList.getSelectedIndex() > -1) {
             Human person = (Human) model.get(charList.getSelectedIndex());
             nameLabel.setText("Name: " + person.getName());
+            if(person.getSex() == Sex.MAN) genderLabel.setText("Gender: Man");
+            if(person.getSex() == Sex.WOMAN) genderLabel.setText("Gender: Woman");
             classLabel.setText("Class: " + person.getClass().getSimpleName());
             strLabel.setText("Strength: " + person.getStrengthS());
             dxtLabel.setText("Dexterity: " + person.getDexterityS());
@@ -185,6 +213,37 @@ public class loadCharacter extends javax.swing.JFrame {
             conLabel.setText("Constitution: " + person.getConstitutionS());
         }
     }//GEN-LAST:event_charListMouseClicked
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        int selectedIndex = charList.getSelectedIndex();
+        if (selectedIndex != -1) {
+            model.remove(selectedIndex);
+        }
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("soubor.txt"))) {
+            BufferedReader br = new BufferedReader(new FileReader("soubor.txt"));
+            if (br.readLine() == null) {
+                bw.write("class;name;strength;dexterity;intelligence;constitution;sex");
+                bw.newLine();
+            }
+            for (int i = 0; i < model.getSize(); i++) {
+                Human person = (Human) model.get(i);
+                String output = person.getClass().getSimpleName() + ";"
+                    + person.getName() + ";"
+                    + person.getStrength() + ";"
+                    + person.getDexterity() + ";"
+                    + person.getIntelligence() + ";"
+                    + person.getConstitution() + ";"
+                    + person.getSex();
+                bw.write(output);
+                if (i < model.getSize()) {
+                    bw.newLine();
+                }
+            }
+            bw.flush();
+        } catch (Exception e) {
+            System.err.println("Do souboru se nepovedlo zapsat.");
+        }
+    }//GEN-LAST:event_deleteButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,7 +286,9 @@ public class loadCharacter extends javax.swing.JFrame {
     private javax.swing.JLabel classLabel;
     private javax.swing.JLabel conLabel;
     private javax.swing.JButton contButton;
+    private javax.swing.JButton deleteButton;
     private javax.swing.JLabel dxtLabel;
+    private javax.swing.JLabel genderLabel;
     private javax.swing.JLabel intLabel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nameLabel;

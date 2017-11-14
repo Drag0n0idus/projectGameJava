@@ -1,7 +1,2 @@
 class;name;strength;dexterity;intelligence;constitution;sex
-Ranger;John;11;13;8;1;MAN
-Mage;Betty;8;11;13;0;WOMAN
-Warrior;Gordon;13;8;11;2;MAN
-Warrior;John;13;8;11;2;MAN
-Warrior;John;13;8;11;2;MAN
-Warrior;John;13;8;11;2;MAN
+Mage;Mariah;8;11;13;0;WOMAN

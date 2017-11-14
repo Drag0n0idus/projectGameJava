@@ -20,6 +20,7 @@ public class CreateMenu extends javax.swing.JFrame {
      * Creates new form CreateMenu
      */
     public CreateMenu() {
+        setTitle("Create new character");
         initComponents();
     }
 
@@ -270,8 +271,8 @@ public class CreateMenu extends javax.swing.JFrame {
             BufferedReader br = new BufferedReader(new FileReader("soubor.txt"));
             if (br.readLine() == null) {
                 bw.write("class;name;strength;dexterity;intelligence;constitution;sex");
+                bw.newLine();
             }
-            bw.newLine();
             String output = character.getClass().getSimpleName() + ";"
                     + character.getName() + ";"
                     + character.getStrength() + ";"
@@ -280,11 +281,16 @@ public class CreateMenu extends javax.swing.JFrame {
                     + character.getConstitution() + ";"
                     + character.getSex();
             bw.write(output);
+            bw.newLine();
             bw.flush();
             new PopupInfoMenu(character).setVisible(true);
         } catch (Exception e) {
             System.err.println("Do souboru se nepovedlo zapsat.");
         }
+        
+        new Inventory(character).setVisible(true);
+        setVisible(false);
+        dispose();
     }//GEN-LAST:event_createNewButtonActionPerformed
 
     private void warriorButtonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_warriorButtonStateChanged

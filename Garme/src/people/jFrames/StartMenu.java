@@ -15,6 +15,7 @@ public class StartMenu extends javax.swing.JFrame {
      * Creates new form StartMenu
      */
     public StartMenu() {
+        setTitle("Skill Point Simulator 2018");
         initComponents();
     }
 
@@ -34,7 +35,7 @@ public class StartMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Best Game EVer");
+        jLabel1.setText("Skill point Simulator 2018");
 
         startButton.setText("Start Game");
         startButton.addActionListener(new java.awt.event.ActionListener() {

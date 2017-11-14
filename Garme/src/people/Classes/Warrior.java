@@ -15,6 +15,7 @@ public class Warrior extends Human {
     private int intel = 1;
     private int con = 2;
     private String specialization = "WARRIOR";
+    private Weapons weapon = new Weapons(Weapons.Type.SWORD);
 
     public Warrior(String jmeno) {
         super(jmeno);
@@ -22,15 +23,48 @@ public class Warrior extends Human {
         this.setDexterity(super.getDexterity() + dxt);
         this.setIntelligence(super.getIntelligence() + intel);
         this.setConstitution(super.getConstitution() + con);
+        this.setWeapon(weapon);
     }
 
     public String getSpecialization() {
         return specialization;
     }  
+
+    public int getStr() {
+        return str;
+    }
+
+    public void setStr(int str) {
+        this.str = str;
+    }
+
+    public int getDxt() {
+        return dxt;
+    }
+
+    public void setDxt(int dxt) {
+        this.dxt = dxt;
+    }
+
+    public int getIntel() {
+        return intel;
+    }
+
+    public void setIntel(int intel) {
+        this.intel = intel;
+    }
+
+    public int getCon() {
+        return con;
+    }
+
+    public void setCon(int con) {
+        this.con = con;
+    }
     
     @Override
     public String toString(){
-        String output = this.getName() + " " + this.getClass().getSimpleName();
+        String output = this.getName() + " [" + this.getClass().getSimpleName() + "]";
         return output;
     }
 }

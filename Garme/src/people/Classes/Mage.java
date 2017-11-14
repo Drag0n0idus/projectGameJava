@@ -14,21 +14,47 @@ public class Mage extends Human {
     private int dxt = 1;
     private int intel = 3;
     private String specialization = "MAGE";
+    private Weapons weapon = new Weapons(Weapons.Type.WAND);
 
     public Mage(String jmeno) {
         super(jmeno);
         this.setStrength(super.getStrength() + str);
         this.setDexterity(super.getDexterity() + dxt);
-        this.setIntelligence(super.getIntelligence() + intel);
+        this.setIntelligence(super.getIntelligence() + intel);   
+        this.setWeapon(weapon);
     }
 
     public String getSpecialization() {
         return specialization;
     } 
-    
+
+    public int getStr() {
+        return str;
+    }
+
+    public void setStr(int str) {
+        this.str = str;
+    }
+
+    public int getDxt() {
+        return dxt;
+    }
+
+    public void setDxt(int dxt) {
+        this.dxt = dxt;
+    }
+
+    public int getIntel() {
+        return intel;
+    }
+
+    public void setIntel(int intel) {
+        this.intel = intel;
+    }
+
     @Override
     public String toString(){
-        String output = this.getName() + " " + this.getClass().getSimpleName();
+        String output = this.getName() + " [" + this.getClass().getSimpleName() + "]";
         return output;
     }
 }

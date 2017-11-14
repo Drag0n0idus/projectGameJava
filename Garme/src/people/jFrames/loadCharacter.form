@@ -29,7 +29,8 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="55" max="32767" attributes="0"/>
+                      <Component id="deleteButton" pref="77" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="contButton" max="32767" attributes="0"/>
                           <Component id="backButton" max="32767" attributes="0"/>
@@ -41,6 +42,7 @@
                   <Component id="dxtLabel" alignment="0" max="32767" attributes="0"/>
                   <Component id="intLabel" max="32767" attributes="0"/>
                   <Component id="conLabel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="genderLabel" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
           </Group>
@@ -57,6 +59,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="classLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="genderLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="strLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="dxtLabel" min="-2" max="-2" attributes="0"/>
@@ -64,9 +68,12 @@
                       <Component id="intLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="conLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="contButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="deleteButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="contButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="backButton" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -140,6 +147,19 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Constitution"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="genderLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Gender"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="deleteButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Delete"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

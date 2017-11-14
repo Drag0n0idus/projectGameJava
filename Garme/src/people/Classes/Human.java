@@ -21,9 +21,14 @@ public class Human {
     private int intelligence = 10;
     private int constitution = 0;
     private Sex sex = Sex.MAN;
+    private Weapons weapon;
+    private Armor chest = new Armor(Armor.Type.CHEST);
+    private Armor helmet = new Armor(Armor.Type.HELMET);
+    private Armor shoes = new Armor(Armor.Type.SHOES);
 
     public Human(String name){
         this.setName(name);
+        
     }
     
     public String getName() {
@@ -85,11 +90,42 @@ public class Human {
     public Sex getSex() {
         return sex;
     }
-
+   
     public void setSex(Sex sex) {
         this.sex = sex;
     }
     
+    public Weapons getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapons weapon) {
+        this.weapon = weapon;
+    }
+
+    public Armor getChest() {
+        return chest;
+    }
+
+    public void setChest(Armor chest) {
+        this.chest = chest;
+    }
+
+    public Armor getHelmet() {
+        return helmet;
+    }
+
+    public void setHelmet(Armor helmet) {
+        this.helmet = helmet;
+    }
+
+    public Armor getShoes() {
+        return shoes;
+    }
+
+    public void setShoes(Armor shoes) {
+        this.shoes = shoes;
+    }
     
- 
+    
 }

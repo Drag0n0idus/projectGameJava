@@ -15,12 +15,15 @@ public class PopupInfoMenu extends javax.swing.JFrame {
      * Creates new form PopupInfoMenu
      */
     public PopupInfoMenu() {
+        setTitle("Success!");
         initComponents();
     }
     
     public PopupInfoMenu(Human character) {
+        setTitle("Success!");
         initComponents();
         infoLabel.setText("The character " + character.getName() + " was created succesfuly!");
+        this.setAlwaysOnTop(true);
     }
 
     /**
