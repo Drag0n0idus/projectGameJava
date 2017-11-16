@@ -22,6 +22,7 @@ public class CreateMenu extends javax.swing.JFrame {
     public CreateMenu() {
         setTitle("Create new character");
         initComponents();
+        createNewButton.setEnabled(false);
     }
 
     /**
@@ -58,6 +59,7 @@ public class CreateMenu extends javax.swing.JFrame {
         wConstitution = new javax.swing.JLabel();
         mConstitution = new javax.swing.JLabel();
         rConstitution = new javax.swing.JLabel();
+        checkButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -127,6 +129,13 @@ public class CreateMenu extends javax.swing.JFrame {
 
         rConstitution.setText("Constitution: ");
 
+        checkButton.setText("Check");
+        checkButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -149,7 +158,9 @@ public class CreateMenu extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(checkButton))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(classLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -189,7 +200,8 @@ public class CreateMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sexLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -232,6 +244,8 @@ public class CreateMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         new StartMenu().setVisible(true);
         setVisible(false);
@@ -297,6 +311,17 @@ public class CreateMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_warriorButtonStateChanged
 
+    private void checkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkButtonActionPerformed
+        if(nameTextField.getText().equalsIgnoreCase("")){
+           createNewButton.setEnabled(false);
+           new PopupInfoMenu("No suitable name entered!").setVisible(true);
+        }
+        else {
+            createNewButton.setEnabled(true);
+            new PopupInfoMenu("The name is valid!").setVisible(true);
+        }
+    }//GEN-LAST:event_checkButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -334,6 +359,7 @@ public class CreateMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
+    private javax.swing.JButton checkButton;
     private javax.swing.ButtonGroup classButtonGroup;
     private javax.swing.JLabel classLabel;
     private javax.swing.JButton createNewButton;

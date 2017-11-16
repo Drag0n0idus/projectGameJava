@@ -25,6 +25,13 @@ public class PopupInfoMenu extends javax.swing.JFrame {
         infoLabel.setText("The character " + character.getName() + " was created succesfuly!");
         this.setAlwaysOnTop(true);
     }
+    
+    public PopupInfoMenu(String warning) {
+        setTitle("No name chosen");
+        initComponents();
+        infoLabel.setText(warning);
+        this.setAlwaysOnTop(true);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

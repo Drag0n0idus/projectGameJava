@@ -10,7 +10,7 @@ package people;
  * @author František
  */
 public class Inventory extends javax.swing.JFrame {
-
+    private Human character;
     /**
      * Creates new form Inventory
      */
@@ -19,9 +19,10 @@ public class Inventory extends javax.swing.JFrame {
         initComponents();
     }
     
-    public Inventory(Human character) {
+    public Inventory(Human person) {
         setTitle("Inventory");
         initComponents();
+        character = person;
         nameLabel.setText("Name: " + character.getName());
         if(character.getSex() == Human.Sex.MAN) genderLabel.setText("Gender: Man");
         if(character.getSex() == Human.Sex.WOMAN) genderLabel.setText("Gender: Woman");
@@ -192,7 +193,9 @@ public class Inventory extends javax.swing.JFrame {
     }//GEN-LAST:event_quitButtonActionPerformed
 
     private void statButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statButtonActionPerformed
-        // TODO add your handling code here:
+        new Stats(character).setVisible(true);
+        setVisible(false);
+        dispose();
     }//GEN-LAST:event_statButtonActionPerformed
 
     /**

@@ -25,6 +25,9 @@ public class Human {
     private Armor chest = new Armor(Armor.Type.CHEST);
     private Armor helmet = new Armor(Armor.Type.HELMET);
     private Armor shoes = new Armor(Armor.Type.SHOES);
+    private int exp = 0;
+    private int level = 1;
+    private int point = 0;
 
     public Human(String name){
         this.setName(name);
@@ -126,6 +129,39 @@ public class Human {
     public void setShoes(Armor shoes) {
         this.shoes = shoes;
     }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public int getPoint() {
+        return point;
+    }
+
+    public void setPoint(int point) {
+        this.point = point;
+    }
+
+    public int getExp() {
+        return exp;
+    }
+
+    public void setExp(int exp) {
+        this.exp = exp;
+    }
     
+    public boolean expCount(int exp){
+        if(exp == 10) return true;
+        else return false;
+    }
     
+    public void levelUp(){
+        level++;
+        point += 3;
+        exp = 0;
+    }
 }

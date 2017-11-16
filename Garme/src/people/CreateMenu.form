@@ -50,6 +50,8 @@
                               <Component id="nameLabel" min="-2" pref="75" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="nameTextField" min="-2" pref="120" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="checkButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="classLabel" min="-2" pref="75" max="-2" attributes="0"/>
@@ -105,6 +107,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="nameLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="nameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="checkButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -294,6 +297,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Constitution: "/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="checkButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Check"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
