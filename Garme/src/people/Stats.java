@@ -5,6 +5,8 @@
  */
 package people;
 
+import java.awt.Color;
+
 /**
  *
  * @author František
@@ -15,8 +17,9 @@ public class Stats extends javax.swing.JFrame {
     private int armor;
     private int str;
     private int dxt;
-    private int inte;
+    private int intel;
     private int con;
+    private int points;
 
     /**
      * Creates new form Stats
@@ -72,6 +75,7 @@ public class Stats extends javax.swing.JFrame {
         expLabel = new javax.swing.JLabel();
         expButton = new javax.swing.JButton();
         levelLabel = new javax.swing.JLabel();
+        resetButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -137,6 +141,13 @@ public class Stats extends javax.swing.JFrame {
 
         levelLabel.setText("Level");
 
+        resetButton.setText("Reset");
+        resetButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -156,21 +167,20 @@ public class Stats extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                        .addComponent(expButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dPlus)
-                            .addComponent(sPlus)
-                            .addComponent(iPlus)
-                            .addComponent(cPlusPlus)
-                            .addComponent(aPoints))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dPlus)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                        .addComponent(expButton))
+                    .addComponent(sPlus)
+                    .addComponent(iPlus)
+                    .addComponent(cPlusPlus)
+                    .addComponent(aPoints))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(resetButton))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -191,7 +201,9 @@ public class Stats extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dLabel)
-                    .addComponent(dPlus))
+                    .addComponent(dPlus)
+                    .addComponent(resetButton)
+                    .addComponent(expButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(iLabel)
@@ -208,9 +220,7 @@ public class Stats extends javax.swing.JFrame {
                     .addComponent(aPoints))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(confirmButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                        .addComponent(expButton))
+                    .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -225,7 +235,7 @@ public class Stats extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void expButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_expButtonActionPerformed
-        character.setExp(character.getExp() + 10);
+        character.setExp(character.getExp() + 5);
         expBar.setValue(character.getExp());
         if (character.expCount(character.getExp())) {
             character.levelUp();
@@ -294,6 +304,51 @@ public class Stats extends javax.swing.JFrame {
         aPoints.setText("Available attribute points: " + character.getPoint());
     }//GEN-LAST:event_cPlusPlusActionPerformed
 
+    private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
+        points = 0;
+        if(character instanceof Mage){
+        str = ((Mage)character).getStr();
+        dxt = ((Mage)character).getDxt();
+        intel = ((Mage)character).getIntel();
+        con = 0;
+        }
+        if(character instanceof Warrior){
+        str = ((Warrior)character).getStr();
+        dxt = ((Warrior)character).getDxt();
+        intel = ((Warrior)character).getIntel();
+        con = ((Warrior)character).getCon();
+        }
+        if(character instanceof Ranger){
+        str = ((Ranger)character).getStr();
+        dxt = ((Ranger)character).getDxt();
+        intel = ((Ranger)character).getIntel();
+        con = ((Ranger)character).getCon();
+        }
+        if (character.getStrength() > (10 + str)) points += character.getStrength() - (10 + str);
+        if (character.getDexterity() > (10 + dxt)) points += character.getDexterity() - (10 + dxt);
+        if (character.getIntelligence() > (10 + intel)) points += character.getIntelligence() - (10 + intel);
+        if (character.getConstitution() > con) points += character.getConstitution() - (con);
+        character.setStrength(10 + str);
+        character.setDexterity(10 + dxt);
+        character.setIntelligence(10 + intel);
+        character.setConstitution(con);
+        
+        character.setPoint(character.getPoint() + points);
+        
+        sLabel.setText("Strength: " + character.getStrengthS());
+        dLabel.setText("Dexterity: " + character.getDexterityS());
+        iLabel.setText("Intelligence: " + character.getIntelligenceS());
+        cLabel.setText("constitution: " + character.getConstitutionS());
+        aPoints.setText("Available attribute points: " + character.getPoint());
+        
+        if(character.getPoint() > 0){
+            sPlus.setEnabled(true);
+            dPlus.setEnabled(true);
+            iPlus.setEnabled(true);
+            cPlusPlus.setEnabled(true);
+        }
+    }//GEN-LAST:event_resetButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -344,6 +399,7 @@ public class Stats extends javax.swing.JFrame {
     private javax.swing.JLabel iLabel;
     private javax.swing.JButton iPlus;
     private javax.swing.JLabel levelLabel;
+    private javax.swing.JButton resetButton;
     private javax.swing.JLabel sLabel;
     private javax.swing.JButton sPlus;
     // End of variables declaration//GEN-END:variables

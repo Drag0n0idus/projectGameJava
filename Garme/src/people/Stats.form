@@ -42,25 +42,23 @@
                       <Component id="backButton" min="-2" pref="90" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace pref="76" max="32767" attributes="0"/>
+                      <Component id="dPlus" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="80" max="32767" attributes="0"/>
                       <Component id="expButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="dPlus" min="-2" max="-2" attributes="0"/>
-                          <Component id="sPlus" min="-2" max="-2" attributes="0"/>
-                          <Component id="iPlus" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cPlusPlus" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="aPoints" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="sPlus" min="-2" max="-2" attributes="0"/>
+                  <Component id="iPlus" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="cPlusPlus" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="aPoints" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <Component id="confirmButton" min="-2" pref="90" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="confirmButton" min="-2" pref="90" max="-2" attributes="0"/>
+                  <Component id="resetButton" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
@@ -87,6 +85,8 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="dLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="dPlus" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="resetButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="expButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -107,10 +107,7 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="confirmButton" alignment="3" pref="40" max="32767" attributes="0"/>
-                      <Component id="expButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="confirmButton" min="-2" pref="40" max="-2" attributes="0"/>
                   <Component id="backButton" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -216,6 +213,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Level"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="resetButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reset"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="resetButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
