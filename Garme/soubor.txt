@@ -1,2 +1,1 @@
-class;name;strength;dexterity;intelligence;constitution;sex
-Mage;Mariah;8;11;13;0;WOMAN
+class;name;strength;dexterity;intelligence;constitution;sex;toc

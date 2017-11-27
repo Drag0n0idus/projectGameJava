@@ -28,7 +28,7 @@ public class Inventory extends javax.swing.JFrame {
         if(character.getSex() == Human.Sex.WOMAN) genderLabel.setText("Gender: Woman");
         classLabel.setText("Class: " + character.getClass().getSimpleName());
         weaponLabel.setText("Weapon: " + character.getWeapon().getName());
-        dmgLabel.setText("Damage: " + character.getWeapon().getDamageMin() + " - " + character.getWeapon().getDamageMax());
+        dmgLabel.setText("Damage: " + character.getWeapon().getDamage());
         chestLabel.setText("Chest: " + character.getChest().getName());
         chArmor.setText("Armor: " + character.getChest().getArmor());
         helmLabel.setText("Helmet: " + character.getHelmet().getName());
@@ -187,7 +187,7 @@ public class Inventory extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
-        new ExitPopupMenu().setVisible(true);
+        new ExitPopupMenu(character).setVisible(true);
         setVisible(false);
         dispose();
     }//GEN-LAST:event_quitButtonActionPerformed

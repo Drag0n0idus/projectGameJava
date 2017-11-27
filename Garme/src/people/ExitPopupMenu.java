@@ -5,12 +5,17 @@
  */
 package people;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+
 /**
  *
  * @author Both
  */
 public class ExitPopupMenu extends javax.swing.JFrame {
-
+    private Human character;
     /**
      * Creates new form ExitPopupMenu
      */
@@ -18,7 +23,51 @@ public class ExitPopupMenu extends javax.swing.JFrame {
         setTitle("Quit?");
         initComponents();
     }
-
+    
+    public ExitPopupMenu(Human person) {
+        setTitle("Quit?");
+        initComponents();
+        character = person;
+    }
+    
+    public void saveChar(){
+        String newChar = character.getToc() + ".txt";
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(newChar))) {
+            BufferedReader br = new BufferedReader(new FileReader(newChar));
+            if (br.readLine() == null) {
+                bw.write("class;name;strength;dexterity;intelligence;constitution;sex;toc;weaponName;weaponDmg;weaponType;"
+                        + "chestName;chestArmor;helmetName;helmetArmor;shoesName;shoesArmor");
+                bw.newLine();
+            }
+            String output = character.getClass().getSimpleName() + ";"
+                    + character.getName() + ";"
+                    + character.getStrength() + ";"
+                    + character.getDexterity() + ";"
+                    + character.getIntelligence() + ";"
+                    + character.getConstitution() + ";"
+                    + character.getSex() + ";"
+                    + character.getToc() + ";"
+                    + character.getWeapon().getName() + ";"
+                    + character.getWeapon().getDamage() + ";"
+                    + character.getWeapon().getType() + ";"
+                    + character.getChest().getName() + ";"
+                    + character.getChest().getArmor() + ";"
+                    + character.getHelmet().getName() + ";"
+                    + character.getHelmet().getArmor() + ";"
+                    + character.getShoes().getName() + ";"
+                    + character.getShoes().getArmor() + ";"
+                    + character.getLevel() + ";"
+                    + character.getPoint() + ";"
+                    + character.getExp();
+            bw.write(output);
+            bw.newLine();
+            bw.flush();
+            new PopupInfoMenu("Byla uložena postava ", character).setVisible(true);
+        } catch (Exception e) {
+            System.err.println("Do souboru se nepovedlo zapsat.");
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,14 +86,14 @@ public class ExitPopupMenu extends javax.swing.JFrame {
 
         jLabel1.setText("Do you want to quit to desktop or go back to main menu?");
 
-        quitButton.setText("Quit");
+        quitButton.setText("Save & Quit");
         quitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quitButtonActionPerformed(evt);
             }
         });
 
-        mainMenuButton.setText("Main Menu");
+        mainMenuButton.setText("Save & Exit to Main Menu");
         mainMenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mainMenuButtonActionPerformed(evt);
@@ -62,19 +111,19 @@ public class ExitPopupMenu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(25, 25, 25))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(cancelButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(quitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
+                        .addComponent(quitButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(mainMenuButton)
-                        .addGap(25, 25, 25))))
+                        .addGap(19, 19, 19))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,17 +142,19 @@ public class ExitPopupMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
+        saveChar();
         setVisible(false);
         dispose();
     }//GEN-LAST:event_quitButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        new Inventory().setVisible(true);
+        new Inventory(character).setVisible(true);
         setVisible(false);
         dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void mainMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainMenuButtonActionPerformed
+        saveChar();
         new StartMenu().setVisible(true);
         setVisible(false);
         dispose();

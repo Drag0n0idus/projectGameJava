@@ -52,31 +52,26 @@
                               <Component id="nameTextField" min="-2" pref="120" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="checkButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="renameButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="classLabel" min="-2" pref="75" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="warriorButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="wStrenght" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="wDexterity" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="wIntelligence" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="mageButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="mStrenght" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="mDexterity" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="mIntelligence" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="wConstitution" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="mConstitution" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="warriorButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="wStrenght" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="wDexterity" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="wIntelligence" min="-2" max="-2" attributes="0"/>
+                                  <Component id="wConstitution" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="mConstitution" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mageButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mStrenght" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mDexterity" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mIntelligence" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -93,7 +88,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="114" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="79" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -108,6 +103,7 @@
                   <Component id="nameLabel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="nameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="checkButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="renameButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -240,62 +236,62 @@
     </Component>
     <Component class="javax.swing.JLabel" name="wStrenght">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Strenght: "/>
+        <Property name="text" type="java.lang.String" value="Strenght:      13"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="mStrenght">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Strenght: "/>
+        <Property name="text" type="java.lang.String" value="Strenght:        8"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="rStrenght">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Strenght: "/>
+        <Property name="text" type="java.lang.String" value="Strenght:      11"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="wDexterity">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Dexterity: "/>
+        <Property name="text" type="java.lang.String" value="Dexterity:        8"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="mDexterity">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Dexterity: "/>
+        <Property name="text" type="java.lang.String" value="Dexterity:      11"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="rDexterity">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Dexterity: "/>
+        <Property name="text" type="java.lang.String" value="Dexterity:     13"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="wIntelligence">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Intelligence: "/>
+        <Property name="text" type="java.lang.String" value="Intelligence: 11"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="mIntelligence">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Intelligence: "/>
+        <Property name="text" type="java.lang.String" value="Intelligence: 13"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="rIntelligence">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Intelligence: "/>
+        <Property name="text" type="java.lang.String" value="Intelligence:  8"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="wConstitution">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Constitution: "/>
+        <Property name="text" type="java.lang.String" value="Constitution:  2"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="mConstitution">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Constitution: "/>
+        <Property name="text" type="java.lang.String" value="Constitution:  0"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="rConstitution">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Constitution: "/>
+        <Property name="text" type="java.lang.String" value="Constitution:  1"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="checkButton">
@@ -304,6 +300,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="renameButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Rename"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="renameButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

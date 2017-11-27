@@ -5,6 +5,8 @@
  */
 package people;
 
+import java.util.Date;
+
 /**
  * Třída Human
  * @author Richard Míček (borrowed)
@@ -28,6 +30,7 @@ public class Human {
     private int exp = 0;
     private int level = 1;
     private int point = 0;
+    private String toc;
 
     public Human(String name){
         this.setName(name);
@@ -153,6 +156,16 @@ public class Human {
     public void setExp(int exp) {
         this.exp = exp;
     }
+
+    public String getToc() {
+        return toc;
+    }
+
+    public void setToc(String toc) {
+        this.toc = toc;
+    }
+    
+    
     
     public boolean expCount(int exp){
         if(exp == 10) return true;

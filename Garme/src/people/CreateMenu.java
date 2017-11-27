@@ -9,6 +9,9 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -16,6 +19,8 @@ import java.io.FileWriter;
  */
 public class CreateMenu extends javax.swing.JFrame {
     private Human character;
+    private static final DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+    Date date;
     /**
      * Creates new form CreateMenu
      */
@@ -23,6 +28,7 @@ public class CreateMenu extends javax.swing.JFrame {
         setTitle("Create new character");
         initComponents();
         createNewButton.setEnabled(false);
+        renameButton.setEnabled(false);
     }
 
     /**
@@ -60,6 +66,7 @@ public class CreateMenu extends javax.swing.JFrame {
         mConstitution = new javax.swing.JLabel();
         rConstitution = new javax.swing.JLabel();
         checkButton = new javax.swing.JButton();
+        renameButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,34 +112,41 @@ public class CreateMenu extends javax.swing.JFrame {
             }
         });
 
-        wStrenght.setText("Strenght: ");
+        wStrenght.setText("Strenght:      13");
 
-        mStrenght.setText("Strenght: ");
+        mStrenght.setText("Strenght:        8");
 
-        rStrenght.setText("Strenght: ");
+        rStrenght.setText("Strenght:      11");
 
-        wDexterity.setText("Dexterity: ");
+        wDexterity.setText("Dexterity:        8");
 
-        mDexterity.setText("Dexterity: ");
+        mDexterity.setText("Dexterity:      11");
 
-        rDexterity.setText("Dexterity: ");
+        rDexterity.setText("Dexterity:     13");
 
-        wIntelligence.setText("Intelligence: ");
+        wIntelligence.setText("Intelligence: 11");
 
-        mIntelligence.setText("Intelligence: ");
+        mIntelligence.setText("Intelligence: 13");
 
-        rIntelligence.setText("Intelligence: ");
+        rIntelligence.setText("Intelligence:  8");
 
-        wConstitution.setText("Constitution: ");
+        wConstitution.setText("Constitution:  2");
 
-        mConstitution.setText("Constitution: ");
+        mConstitution.setText("Constitution:  0");
 
-        rConstitution.setText("Constitution: ");
+        rConstitution.setText("Constitution:  1");
 
         checkButton.setText("Check");
         checkButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkButtonActionPerformed(evt);
+            }
+        });
+
+        renameButton.setText("Rename");
+        renameButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                renameButtonActionPerformed(evt);
             }
         });
 
@@ -160,27 +174,25 @@ public class CreateMenu extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(checkButton))
+                                .addComponent(checkButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(renameButton))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(classLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(warriorButton)
-                                            .addComponent(wStrenght)
-                                            .addComponent(wDexterity)
-                                            .addComponent(wIntelligence))
-                                        .addGap(21, 21, 21)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(mageButton)
-                                            .addComponent(mStrenght)
-                                            .addComponent(mDexterity)
-                                            .addComponent(mIntelligence)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(wConstitution)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(mConstitution)))
+                                    .addComponent(warriorButton)
+                                    .addComponent(wStrenght)
+                                    .addComponent(wDexterity)
+                                    .addComponent(wIntelligence)
+                                    .addComponent(wConstitution))
+                                .addGap(21, 21, 21)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(mConstitution)
+                                    .addComponent(mageButton)
+                                    .addComponent(mStrenght)
+                                    .addComponent(mDexterity)
+                                    .addComponent(mIntelligence))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(rangerButton)
@@ -191,7 +203,7 @@ public class CreateMenu extends javax.swing.JFrame {
                                             .addComponent(rDexterity)
                                             .addComponent(rIntelligence)))
                                     .addComponent(rConstitution))))
-                        .addGap(0, 114, Short.MAX_VALUE)))
+                        .addGap(0, 79, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -201,7 +213,8 @@ public class CreateMenu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(checkButton))
+                    .addComponent(checkButton)
+                    .addComponent(renameButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sexLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -254,9 +267,14 @@ public class CreateMenu extends javax.swing.JFrame {
 
 
     private void createNewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewButtonActionPerformed
+
+
+        date = new Date();
+        String dateTime = sdf.format(date);
         if (mageButton.isSelected()) {
             character = new Mage("m");
             character.setName(nameTextField.getText());
+            character.setToc(dateTime);
             if (maleButton.isSelected()) {
                 character.setSex(Human.Sex.MAN);
             } else {
@@ -266,6 +284,7 @@ public class CreateMenu extends javax.swing.JFrame {
         if (warriorButton.isSelected()) {
             character = new Warrior("w");
             character.setName(nameTextField.getText());
+            character.setToc(dateTime);
             if (maleButton.isSelected()) {
                 character.setSex(Human.Sex.MAN);
             } else {
@@ -275,16 +294,35 @@ public class CreateMenu extends javax.swing.JFrame {
         if (rangerButton.isSelected()) {
             character = new Ranger("r");
             character.setName(nameTextField.getText());
+            character.setToc(dateTime);
             if (maleButton.isSelected()) {
                 character.setSex(Human.Sex.MAN);
             } else {
                 character.setSex(Human.Sex.WOMAN);
             }
         }
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("soubor.txt", true))) {
-            BufferedReader br = new BufferedReader(new FileReader("soubor.txt"));
+        
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("charDataBase.txt", true))) {
+            BufferedReader br = new BufferedReader(new FileReader("charDataBase.txt"));
             if (br.readLine() == null) {
-                bw.write("class;name;strength;dexterity;intelligence;constitution;sex");
+                bw.write("toc;name");
+                bw.newLine();
+            }
+            String output = character.getToc() + ";" + character.getName();
+            bw.write(output);
+            bw.newLine();
+            bw.flush();
+        } catch (Exception e) {
+            System.err.println("There was an error lol you lost your progress get rekt.");
+        }
+        
+        String newChar = dateTime + ".txt";
+        
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(newChar, true))) {
+            BufferedReader br = new BufferedReader(new FileReader(newChar));
+            if (br.readLine() == null) {
+                bw.write("class;name;strength;dexterity;intelligence;constitution;sex;toc;weaponName;weaponDmg;weaponType;"
+                        + "chestName;chestArmor;helmetName;helmetArmor;shoesName;shoesArmor;level;attrPoints;exp");
                 bw.newLine();
             }
             String output = character.getClass().getSimpleName() + ";"
@@ -293,7 +331,20 @@ public class CreateMenu extends javax.swing.JFrame {
                     + character.getDexterity() + ";"
                     + character.getIntelligence() + ";"
                     + character.getConstitution() + ";"
-                    + character.getSex();
+                    + character.getSex() + ";"
+                    + character.getToc() + ";"
+                    + character.getWeapon().getName() + ";"
+                    + character.getWeapon().getDamage() + ";"
+                    + character.getWeapon().getType() + ";"
+                    + character.getChest().getName() + ";"
+                    + character.getChest().getArmor() + ";"
+                    + character.getHelmet().getName() + ";"
+                    + character.getHelmet().getArmor() + ";"
+                    + character.getShoes().getName() + ";"
+                    + character.getShoes().getArmor() + ";"
+                    + character.getLevel() + ";"
+                    + character.getPoint() + ";"
+                    + character.getExp();
             bw.write(output);
             bw.newLine();
             bw.flush();
@@ -319,8 +370,21 @@ public class CreateMenu extends javax.swing.JFrame {
         else {
             createNewButton.setEnabled(true);
             new PopupInfoMenu("The name is valid!").setVisible(true);
+            nameTextField.setEditable(false);
+            nameTextField.setEnabled(false);
+            checkButton.setEnabled(false);
+            renameButton.setEnabled(true);
         }
     }//GEN-LAST:event_checkButtonActionPerformed
+
+    private void renameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_renameButtonActionPerformed
+        createNewButton.setEnabled(false);
+        nameTextField.setEditable(true);
+        nameTextField.setEnabled(true);
+        checkButton.setEnabled(true);
+        nameTextField.setText("");
+        renameButton.setEnabled(false);
+    }//GEN-LAST:event_renameButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -377,6 +441,7 @@ public class CreateMenu extends javax.swing.JFrame {
     private javax.swing.JLabel rIntelligence;
     private javax.swing.JLabel rStrenght;
     private javax.swing.JRadioButton rangerButton;
+    private javax.swing.JButton renameButton;
     private javax.swing.ButtonGroup sexButtonGroup;
     private javax.swing.JLabel sexLabel;
     private javax.swing.JLabel wConstitution;

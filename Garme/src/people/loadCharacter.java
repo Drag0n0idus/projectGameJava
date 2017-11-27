@@ -7,8 +7,12 @@ package people;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import javax.swing.DefaultListModel;
 import people.Human.Sex;
 
@@ -17,9 +21,11 @@ import people.Human.Sex;
  * @author Both
  */
 public class loadCharacter extends javax.swing.JFrame {
+
+    private Human personn;
     private Human character;
     DefaultListModel model = new DefaultListModel();
-    
+
     /**
      * Creates new form loadCharacter
      */
@@ -27,14 +33,34 @@ public class loadCharacter extends javax.swing.JFrame {
         setTitle("Load Game");
         initComponents();
         charList.setModel(model);
-        try (BufferedReader br = new BufferedReader(new FileReader("soubor.txt"))) {
+        whichCharacter();
+    }
+
+    public void whichCharacter() {
+        try (BufferedReader br = new BufferedReader(new FileReader("charDataBase.txt"))) {
             String s;
             int i = 0;
             model.clear();
             while ((s = br.readLine()) != null) {
                 if (i > 0) {
                     String[] attr = s.split(";");
-                    switch(attr[0]){
+                    loadFromCharPage(attr[0]);
+                }
+                i++;
+            }
+        } catch (Exception e) {
+            System.err.println("Chyba při čtení ze souboru.");
+        }
+    }
+
+    public void loadFromCharPage(String element) {
+        try (BufferedReader br = new BufferedReader(new FileReader(element + ".txt"))) {
+            String s;
+            int i = 0;
+            while ((s = br.readLine()) != null) {
+                if (i > 0) {
+                    String[] attr = s.split(";");
+                    switch (attr[0]) {
                         case "Mage":
                             character = new Mage(attr[1]);
                             break;
@@ -54,6 +80,25 @@ public class loadCharacter extends javax.swing.JFrame {
                     } else {
                         character.setSex(Human.Sex.WOMAN);
                     }
+                    character.setToc(attr[7]);
+                    character.getWeapon().setName(attr[8]);
+                    character.getWeapon().setDamage(Integer.parseInt(attr[9]));
+                    if (attr[10].equalsIgnoreCase("SWORD")) {
+                        character.getWeapon().setType(Weapons.Type.SWORD);
+                    } else if (attr[10].equalsIgnoreCase("BOW")){
+                        character.getWeapon().setType(Weapons.Type.BOW);
+                    } else {
+                        character.getWeapon().setType(Weapons.Type.WAND);
+                    }
+                    character.getChest().setName(attr[11]);
+                    character.getChest().setArmor(Integer.parseInt(attr[12]));
+                    character.getHelmet().setName(attr[13]);
+                    character.getHelmet().setArmor(Integer.parseInt(attr[14]));
+                    character.getShoes().setName(attr[15]);
+                    character.getShoes().setArmor(Integer.parseInt(attr[16]));
+                    character.setLevel(Integer.parseInt(attr[17]));
+                    character.setPoint(Integer.parseInt(attr[18]));
+                    character.setExp(Integer.parseInt(attr[19]));
                     model.addElement(character);
                 }
                 i++;
@@ -204,8 +249,12 @@ public class loadCharacter extends javax.swing.JFrame {
         if (charList.getSelectedIndex() > -1) {
             Human person = (Human) model.get(charList.getSelectedIndex());
             nameLabel.setText("Name: " + person.getName());
-            if(person.getSex() == Sex.MAN) genderLabel.setText("Gender: Man");
-            if(person.getSex() == Sex.WOMAN) genderLabel.setText("Gender: Woman");
+            if (person.getSex() == Sex.MAN) {
+                genderLabel.setText("Gender: Man");
+            }
+            if (person.getSex() == Sex.WOMAN) {
+                genderLabel.setText("Gender: Woman");
+            }
             classLabel.setText("Class: " + person.getClass().getSimpleName());
             strLabel.setText("Strength: " + person.getStrengthS());
             dxtLabel.setText("Dexterity: " + person.getDexterityS());
@@ -217,23 +266,18 @@ public class loadCharacter extends javax.swing.JFrame {
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         int selectedIndex = charList.getSelectedIndex();
         if (selectedIndex != -1) {
+            personn = (Human) model.get(selectedIndex);
             model.remove(selectedIndex);
         }
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("soubor.txt"))) {
-            BufferedReader br = new BufferedReader(new FileReader("soubor.txt"));
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("charDataBase.txt"))) {
+            BufferedReader br = new BufferedReader(new FileReader("charDataBase.txt"));
             if (br.readLine() == null) {
-                bw.write("class;name;strength;dexterity;intelligence;constitution;sex");
+                bw.write("toc;name");
                 bw.newLine();
             }
             for (int i = 0; i < model.getSize(); i++) {
                 Human person = (Human) model.get(i);
-                String output = person.getClass().getSimpleName() + ";"
-                    + person.getName() + ";"
-                    + person.getStrength() + ";"
-                    + person.getDexterity() + ";"
-                    + person.getIntelligence() + ";"
-                    + person.getConstitution() + ";"
-                    + person.getSex();
+                String output = person.getToc() + ";" + person.getName();
                 bw.write(output);
                 if (i < model.getSize()) {
                     bw.newLine();
@@ -242,6 +286,13 @@ public class loadCharacter extends javax.swing.JFrame {
             bw.flush();
         } catch (Exception e) {
             System.err.println("Do souboru se nepovedlo zapsat.");
+        }
+
+        Path file = FileSystems.getDefault().getPath(personn.getToc() + ".txt");
+        try {
+            boolean success = Files.deleteIfExists(file);
+        } catch (Exception e) {
+            System.err.println(e);
         }
     }//GEN-LAST:event_deleteButtonActionPerformed
 

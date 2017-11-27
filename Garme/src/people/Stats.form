@@ -24,23 +24,15 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="aLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="cLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="sLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="iLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="dLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="expLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="levelLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="backButton" min="-2" pref="90" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="aLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="cLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="sLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="iLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="dLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="expLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="levelLabel" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -55,16 +47,21 @@
                   <Component id="aPoints" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="confirmButton" min="-2" pref="90" max="-2" attributes="0"/>
-                  <Component id="resetButton" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="resetButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="expBar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="expBar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="backButton" min="-2" pref="90" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -105,12 +102,9 @@
                   <Component id="levelLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="aPoints" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="confirmButton" min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="backButton" max="32767" attributes="0"/>
-              </Group>
               <EmptySpace max="-2" attributes="0"/>
+              <Component id="backButton" min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -143,16 +137,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="backButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Back"/>
+        <Property name="text" type="java.lang.String" value="Confirm"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backButtonActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="confirmButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Confirm"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="sPlus">
       <Properties>

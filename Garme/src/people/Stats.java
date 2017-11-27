@@ -46,7 +46,6 @@ public class Stats extends javax.swing.JFrame {
             iPlus.setEnabled(false);
             cPlusPlus.setEnabled(false);
         }
-        confirmButton.setEnabled(false);
 
     }
 
@@ -65,7 +64,6 @@ public class Stats extends javax.swing.JFrame {
         cLabel = new javax.swing.JLabel();
         aLabel = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
-        confirmButton = new javax.swing.JButton();
         sPlus = new javax.swing.JButton();
         dPlus = new javax.swing.JButton();
         iPlus = new javax.swing.JButton();
@@ -89,14 +87,12 @@ public class Stats extends javax.swing.JFrame {
 
         aLabel.setText("Armor");
 
-        backButton.setText("Back");
+        backButton.setText("Confirm");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
-
-        confirmButton.setText("Confirm");
 
         sPlus.setText("+");
         sPlus.addActionListener(new java.awt.event.ActionListener() {
@@ -153,20 +149,15 @@ public class Stats extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(aLabel)
-                            .addComponent(cLabel)
-                            .addComponent(sLabel)
-                            .addComponent(iLabel)
-                            .addComponent(dLabel)
-                            .addComponent(expLabel)
-                            .addComponent(levelLabel)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(aLabel)
+                    .addComponent(cLabel)
+                    .addComponent(sLabel)
+                    .addComponent(iLabel)
+                    .addComponent(dLabel)
+                    .addComponent(expLabel)
+                    .addComponent(levelLabel))
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -178,14 +169,17 @@ public class Stats extends javax.swing.JFrame {
                     .addComponent(cPlusPlus)
                     .addComponent(aPoints))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(resetButton))
-                .addContainerGap())
+                .addComponent(resetButton)
+                .addGap(33, 33, 33))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(expBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(expBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,11 +212,9 @@ public class Stats extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(levelLabel)
                     .addComponent(aPoints))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(confirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12))
         );
 
         pack();
@@ -390,7 +382,6 @@ public class Stats extends javax.swing.JFrame {
     private javax.swing.JButton backButton;
     private javax.swing.JLabel cLabel;
     private javax.swing.JButton cPlusPlus;
-    private javax.swing.JButton confirmButton;
     private javax.swing.JLabel dLabel;
     private javax.swing.JButton dPlus;
     private javax.swing.JProgressBar expBar;

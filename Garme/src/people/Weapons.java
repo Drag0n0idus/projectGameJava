@@ -14,8 +14,7 @@ public class Weapons {
         SWORD, BOW, WAND
     }
     private String name;
-    private int damageMin;
-    private int damageMax;
+    private int damage;
     private Type type;
     
     public Weapons(Type type){
@@ -30,14 +29,13 @@ public class Weapons {
                 this.setName("Old bow");
                 break;
         }
-        this.setDamage(3, 5);
+        this.setDamage(2);
         this.setType(type);
     }
     
-    public Weapons(String name, int damageMin, int damageMax, Type type) {
+    public Weapons(String name, int damage, Type type) {
         this.name = name;
-        this.damageMin = damageMin;
-        this.damageMax = damageMax;
+        this.damage = damage;
         this.type = type;
     }
 
@@ -49,17 +47,12 @@ public class Weapons {
         this.name = name;
     }
 
-    public int getDamageMin() {
-        return damageMin;
-    }
-    
-    public int getDamageMax() {
-        return damageMax;
+    public int getDamage() {
+        return damage;
     }
 
-    public void setDamage(int damageMin, int damageMax) {
-        this.damageMin = damageMin;
-        this.damageMax = damageMax;
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 
     public Type getType() {
