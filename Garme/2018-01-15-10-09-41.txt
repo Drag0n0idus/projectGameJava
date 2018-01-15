@@ -1,0 +1,2 @@
+class;name;strength;dexterity;intelligence;constitution;sex;toc;weaponName;weaponDmg;weaponType;chestName;chestArmor;helmetName;helmetArmor;shoesName;shoesArmor;health
+Ranger;BOB;11;13;8;33.0;WOMAN;2018-01-15-10-09-41;Old bow;2;BOW;Banged up brestplate;5;Old bucket;3;Linen wraps;1;9;2;0;66.0

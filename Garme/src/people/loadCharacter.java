@@ -74,7 +74,7 @@ public class loadCharacter extends javax.swing.JFrame {
                     character.setStrength(Integer.parseInt(attr[2]));
                     character.setDexterity(Integer.parseInt(attr[3]));
                     character.setIntelligence(Integer.parseInt(attr[4]));
-                    character.setConstitution(Integer.parseInt(attr[5]));
+                    character.setConstitution(Float.parseFloat(attr[5]));
                     if (attr[6].equalsIgnoreCase("MAN")) {
                         character.setSex(Human.Sex.MAN);
                     } else {
@@ -99,6 +99,7 @@ public class loadCharacter extends javax.swing.JFrame {
                     character.setLevel(Integer.parseInt(attr[17]));
                     character.setPoint(Integer.parseInt(attr[18]));
                     character.setExp(Integer.parseInt(attr[19]));
+                    character.setHealth(Float.parseFloat(attr[20]));
                     model.addElement(character);
                 }
                 i++;
@@ -239,7 +240,7 @@ public class loadCharacter extends javax.swing.JFrame {
     private void contButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contButtonActionPerformed
         if (charList.getSelectedIndex() > -1) {
             Human person = (Human) model.get(charList.getSelectedIndex());
-            new Inventory(person).setVisible(true);
+            new WorldMap(person).setVisible(true);
             setVisible(false);
             dispose();
         }

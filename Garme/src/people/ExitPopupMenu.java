@@ -36,7 +36,7 @@ public class ExitPopupMenu extends javax.swing.JFrame {
             BufferedReader br = new BufferedReader(new FileReader(newChar));
             if (br.readLine() == null) {
                 bw.write("class;name;strength;dexterity;intelligence;constitution;sex;toc;weaponName;weaponDmg;weaponType;"
-                        + "chestName;chestArmor;helmetName;helmetArmor;shoesName;shoesArmor");
+                        + "chestName;chestArmor;helmetName;helmetArmor;shoesName;shoesArmor;health");
                 bw.newLine();
             }
             String output = character.getClass().getSimpleName() + ";"
@@ -58,7 +58,8 @@ public class ExitPopupMenu extends javax.swing.JFrame {
                     + character.getShoes().getArmor() + ";"
                     + character.getLevel() + ";"
                     + character.getPoint() + ";"
-                    + character.getExp();
+                    + character.getExp() + ";"
+                    + character.getHealth(); 
             bw.write(output);
             bw.newLine();
             bw.flush();
@@ -148,7 +149,7 @@ public class ExitPopupMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_quitButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        new Inventory(character).setVisible(true);
+        new WorldMap(character).setVisible(true);
         setVisible(false);
         dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed

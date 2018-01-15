@@ -23,6 +23,7 @@ public class Warrior extends Human {
         this.setDexterity(super.getDexterity() + dxt);
         this.setIntelligence(super.getIntelligence() + intel);
         this.setConstitution(super.getConstitution() + con);
+        this.setHealth(super.getHealth() * (this.getConstitution()/10));       
         this.setWeapon(weapon);
     }
 

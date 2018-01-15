@@ -221,7 +221,6 @@ public class Stats extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        new Inventory(character).setVisible(true);
         setVisible(false);
         dispose();
     }//GEN-LAST:event_backButtonActionPerformed
@@ -292,6 +291,8 @@ public class Stats extends javax.swing.JFrame {
             iPlus.setEnabled(false);
             cPlusPlus.setEnabled(false);
         }
+        float conie = (character.getConstitution()/10);
+        character.setHealth(20 * (conie));
         cLabel.setText("Constitution: " + character.getConstitutionS());
         aPoints.setText("Available attribute points: " + character.getPoint());
     }//GEN-LAST:event_cPlusPlusActionPerformed

@@ -13,6 +13,7 @@ public class Mage extends Human {
     private int str = -2;
     private int dxt = 1;
     private int intel = 3;
+    private int cons = 0;
     private String specialization = "MAGE";
     private Weapons weapon = new Weapons(Weapons.Type.WAND);
 
@@ -20,7 +21,9 @@ public class Mage extends Human {
         super(jmeno);
         this.setStrength(super.getStrength() + str);
         this.setDexterity(super.getDexterity() + dxt);
-        this.setIntelligence(super.getIntelligence() + intel);   
+        this.setIntelligence(super.getIntelligence() + intel);  
+        this.setConstitution(super.getConstitution() + cons);
+        this.setHealth(super.getHealth() * (this.getConstitution()/10));
         this.setWeapon(weapon);
     }
 

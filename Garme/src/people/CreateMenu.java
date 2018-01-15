@@ -158,9 +158,9 @@ public class CreateMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(createNewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(createNewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -344,7 +344,8 @@ public class CreateMenu extends javax.swing.JFrame {
                     + character.getShoes().getArmor() + ";"
                     + character.getLevel() + ";"
                     + character.getPoint() + ";"
-                    + character.getExp();
+                    + character.getExp() + ";"
+                    + character.getHealth(); 
             bw.write(output);
             bw.newLine();
             bw.flush();
@@ -353,7 +354,7 @@ public class CreateMenu extends javax.swing.JFrame {
             System.err.println("Do souboru se nepovedlo zapsat.");
         }
         
-        new Inventory(character).setVisible(true);
+        new WorldMap(character).setVisible(true);
         setVisible(false);
         dispose();
     }//GEN-LAST:event_createNewButtonActionPerformed

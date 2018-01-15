@@ -50,7 +50,6 @@ public class Inventory extends javax.swing.JFrame {
         helmLabel = new javax.swing.JLabel();
         weaponLabel = new javax.swing.JLabel();
         shoesLabel = new javax.swing.JLabel();
-        statButton = new javax.swing.JButton();
         quitButton = new javax.swing.JButton();
         nameLabel = new javax.swing.JLabel();
         classLabel = new javax.swing.JLabel();
@@ -74,14 +73,7 @@ public class Inventory extends javax.swing.JFrame {
 
         shoesLabel.setText("Shoes:");
 
-        statButton.setText("Stats");
-        statButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                statButtonActionPerformed(evt);
-            }
-        });
-
-        quitButton.setText("Quit");
+        quitButton.setText("Back");
         quitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quitButtonActionPerformed(evt);
@@ -118,10 +110,7 @@ public class Inventory extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(quitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(statButton, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(quitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(helmLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -177,9 +166,7 @@ public class Inventory extends javax.swing.JFrame {
                     .addComponent(sArmor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(shoesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(statButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(quitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(quitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -187,16 +174,9 @@ public class Inventory extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
-        new ExitPopupMenu(character).setVisible(true);
         setVisible(false);
         dispose();
     }//GEN-LAST:event_quitButtonActionPerformed
-
-    private void statButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statButtonActionPerformed
-        new Stats(character).setVisible(true);
-        setVisible(false);
-        dispose();
-    }//GEN-LAST:event_statButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,7 +229,6 @@ public class Inventory extends javax.swing.JFrame {
     private javax.swing.JButton quitButton;
     private javax.swing.JLabel sArmor;
     private javax.swing.JLabel shoesLabel;
-    private javax.swing.JButton statButton;
     private javax.swing.JLabel weaponLabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -21,7 +21,8 @@ public class Human {
     private int strength = 10;
     private int dexterity = 10;
     private int intelligence = 10;
-    private int constitution = 0;
+    private float constitution = 10;
+    private float health = 20;
     private Sex sex = Sex.MAN;
     private Weapons weapon;
     private Armor chest = new Armor(Armor.Type.CHEST);
@@ -81,15 +82,15 @@ public class Human {
         this.intelligence = intelligence;
     }
 
-    public int getConstitution() {
+    public float getConstitution() {
         return constitution;
     }
     
     public String getConstitutionS() {
-        return Integer.toString(this.getConstitution());
+        return Float.toString(this.getConstitution());
     }
 
-    public void setConstitution(int constitution) {
+    public void setConstitution(float constitution) {
         this.constitution = constitution;
     }
 
@@ -163,6 +164,18 @@ public class Human {
 
     public void setToc(String toc) {
         this.toc = toc;
+    }
+
+    public float getHealth() {
+        return health;
+    }
+    
+    public String getHealthS() {
+        return Float.toString(this.getHealth());
+    }
+
+    public void setHealth(float health) {
+        this.health = health;
     }
     
     
