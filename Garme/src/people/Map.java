@@ -7,18 +7,38 @@ package people;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Random;
 
 public class Map extends JPanel {
+    public int[][] colorLayout = new int[][]{
+        {2,2,2,2,2,2,2,2,2,2,2,2,5,5,0,0,0,0,0,0},
+        {2,2,2,2,2,2,2,2,2,2,2,2,5,5,0,0,0,0,0,0},
+        {2,2,2,2,5,5,5,5,5,5,5,5,5,5,5,5,0,0,0,0},
+        {2,2,2,2,5,5,5,5,5,5,5,5,5,5,5,5,0,0,0,0},
+        {5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,0,0,0,0},
+        {5,5,0,5,5,5,5,1,1,1,1,1,1,1,5,5,0,0,0,5},
+        {5,5,5,5,5,1,1,1,2,2,3,3,3,1,5,5,5,5,5,5},
+        {5,5,5,5,5,1,2,2,2,3,3,3,3,1,5,5,5,5,5,2},
+        {5,5,5,5,5,1,2,2,3,3,3,3,3,1,5,5,5,2,2,2},
+        {5,5,5,5,5,1,5,5,5,5,2,2,3,1,5,5,2,2,2,2},
+        {1,1,1,1,1,1,1,1,1,5,2,2,5,1,5,5,2,2,2,2},
+        {2,2,5,5,5,5,5,5,1,5,5,5,5,1,5,5,5,5,2,2},
+        {2,2,2,2,2,5,5,5,1,1,1,1,1,1,5,5,5,5,2,2},
+        {4,4,4,4,2,2,2,5,5,5,5,5,5,1,5,5,5,5,5,5},
+        {4,4,4,4,2,2,2,2,5,5,5,5,5,1,1,5,5,5,5,5},
+        {4,4,4,4,4,4,2,2,5,5,5,5,5,5,1,5,5,5,5,5},
+        {4,4,4,4,4,4,2,2,2,5,5,5,5,5,1,1,1,1,1,1},
+        {4,4,4,4,4,4,4,4,2,2,5,5,5,5,5,5,5,5,5,5},
+        {4,4,4,4,4,4,4,4,2,2,2,5,5,5,5,5,5,5,5,5},
+        {4,4,4,4,4,4,4,4,4,2,2,2,5,5,5,5,5,5,5,5},
+    };
+    public static final Color DESERT = new Color(255, 255, 102);
+    public static final Color DIRT_ROAD = new Color(153, 102, 51);
+    public static final Color FOREST = new Color(0, 51, 0);
+    public static final Color LAKE = new Color(0, 153, 204);
+    public static final Color MOUNTAINS = new Color(128, 128, 128);
+    public static final Color PLAINS = new Color(102, 204, 0);
 
-    public static final Color DESERT = new Color(255,204,102);
-    public static final Color DIRT_ROAD = new Color(153,102,0);
-    public static final Color FOREST = new Color(0,102,0);
-    public static final Color LAKE = new Color(0,153,153);
-    public static final Color MOUNTAINS = new Color(102,102,255);
-    public static final Color PLAINS = new Color(102,153,0);
-
-    public static final Color[] TERRAIN = {
+    public Color[] terrain = new Color[]{
         DESERT,
         DIRT_ROAD,
         FOREST,
@@ -30,22 +50,19 @@ public class Map extends JPanel {
     public static final int NUM_ROWS = 20;
     public static final int NUM_COLS = 20;
 
-    public static final int PREFERRED_GRID_SIZE_PIXELS = 50;
+    public static final int PREFERRED_GRID_SIZE_PIXELS = 30;
 
     // In reality you will probably want a class here to represent a map tile,
     // which will include things like dimensions, color, properties in the
     // game world.  Keeping simple just to illustrate.
-    private final Color[][] terrainGrid;
+    private Color[][] terrainGrid;
 
     public Map(){
         this.terrainGrid = new Color[NUM_ROWS][NUM_COLS];
-        Random r = new Random();
-        // Randomize the terrain
         for (int i = 0; i < NUM_ROWS; i++) {
             for (int j = 0; j < NUM_COLS; j++) {
-                int randomTerrainIndex = r.nextInt(TERRAIN.length);
-                Color randomColor = TERRAIN[randomTerrainIndex];
-                this.terrainGrid[i][j] = randomColor;
+                int index = this.colorLayout[j][i];
+                this.terrainGrid[i][j] = this.terrain[index];
             }
         }
         int preferredWidth = NUM_COLS * PREFERRED_GRID_SIZE_PIXELS;
@@ -78,12 +95,13 @@ public class Map extends JPanel {
     public static void main(String[] args) {
         // http://docs.oracle.com/javase/tutorial/uiswing/concurrency/initial.html
         SwingUtilities.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 JFrame frame = new JFrame("Game");
-                Map map = new Map();
-                frame.add(map);
+                Map map = new Map();        
+                frame.add(map);              
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.pack();
+                frame.pack();         
                 frame.setVisible(true);
             }
         });
