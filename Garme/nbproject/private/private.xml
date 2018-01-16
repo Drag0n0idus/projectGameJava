@@ -3,17 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/student/Plocha/projectGameJava/Garme/src/people/ExitPopupMenu.java</file>
-            <file>file:/home/student/Plocha/projectGameJava/Garme/src/people/loadCharacter.java</file>
-            <file>file:/home/student/Plocha/projectGameJava/Garme/src/people/Combat.java</file>
-            <file>file:/home/student/Plocha/projectGameJava/Garme/src/people/Human.java</file>
-            <file>file:/home/student/Plocha/projectGameJava/Garme/src/people/PopupInfoMenu.java</file>
-            <file>file:/home/student/Plocha/projectGameJava/Garme/src/people/Map.java</file>
-            <file>file:/home/student/Plocha/projectGameJava/Garme/src/people/WorldMap.java</file>
-            <file>file:/home/student/Plocha/projectGameJava/Garme/src/people/Inventory.java</file>
-            <file>file:/home/student/Plocha/projectGameJava/Garme/src/people/Stats.java</file>
-            <file>file:/home/student/Plocha/projectGameJava/Garme/src/people/CreateMenu.java</file>
-            <file>file:/home/student/Plocha/projectGameJava/Garme/src/people/Mage.java</file>
+            <file>file:/C:/Users/František/Desktop/projectgamejava/Garme/src/people/Inventory.java</file>
+            <file>file:/C:/Users/František/Desktop/projectgamejava/Garme/src/people/Combat.java</file>
+            <file>file:/C:/Users/František/Desktop/projectgamejava/Garme/src/people/Enemy.java</file>
+            <file>file:/C:/Users/František/Desktop/projectgamejava/Garme/src/people/loadCharacter.java</file>
+            <file>file:/C:/Users/František/Desktop/projectgamejava/Garme/src/people/Slime.java</file>
+            <file>file:/C:/Users/František/Desktop/projectgamejava/Garme/src/people/Human.java</file>
+            <file>file:/C:/Users/František/Desktop/projectgamejava/Garme/src/people/WorldMap.java</file>
+            <file>file:/C:/Users/František/Desktop/projectgamejava/Garme/src/people/Map.java</file>
         </group>
     </open-files>
 </project-private>

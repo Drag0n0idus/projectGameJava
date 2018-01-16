@@ -320,11 +320,11 @@ public class Stats extends javax.swing.JFrame {
         if (character.getStrength() > (10 + str)) points += character.getStrength() - (10 + str);
         if (character.getDexterity() > (10 + dxt)) points += character.getDexterity() - (10 + dxt);
         if (character.getIntelligence() > (10 + intel)) points += character.getIntelligence() - (10 + intel);
-        if (character.getConstitution() > con) points += character.getConstitution() - (con);
+        if (character.getConstitution() > con) points += character.getConstitution() - (10 + con);
         character.setStrength(10 + str);
         character.setDexterity(10 + dxt);
         character.setIntelligence(10 + intel);
-        character.setConstitution(con);
+        character.setConstitution(10 + con);
         
         character.setPoint(character.getPoint() + points);
         

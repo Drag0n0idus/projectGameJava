@@ -10,12 +10,31 @@ package people;
  * @author Drag0n0idus
  */
 public class Combat extends javax.swing.JFrame {
-
+    private Human character;
     /**
      * Creates new form Combat
      */
     public Combat() {
         initComponents();
+    }
+    
+    public Combat(Human person) {
+        initComponents();
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        character = person;
+        playerName.setText(character.getName());
+        playerDamage.setText("Damage: " + Integer.toString(character.getWeapon().getDamage()));
+        int armor = character.getChest().getArmor() + character.getShoes().getArmor() + character.getHelmet().getArmor();
+        playerArmor.setText("Armor: " + Integer.toString(armor));
+        playerHP.setText(Integer.toString((int)character.getHealth()));
+        hpBar.setMaximum((int)character.getHealth());
+        hpBar.setValue((int)character.getHealth());
+        Enemy slime = new Slime(character.getLevel(), (int)character.getHealth());
+        enemyBar.setMaximum((int)character.getHealth());
+        enemyBar.setValue((int)character.getHealth());
+        enemyName.setText(slime.getName());
+        enemyDamage.setText("Damage: " + Integer.toString(slime.getDmg()));
+        enemyHP.setText(slime.getHealthS());
     }
 
     /**
@@ -28,16 +47,16 @@ public class Combat extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollBar1 = new javax.swing.JScrollBar();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jProgressBar2 = new javax.swing.JProgressBar();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        playerName = new javax.swing.JLabel();
+        enemyName = new javax.swing.JLabel();
+        enemyBar = new javax.swing.JProgressBar();
+        hpBar = new javax.swing.JProgressBar();
+        enemyHP = new javax.swing.JLabel();
+        playerHP = new javax.swing.JLabel();
+        playerDamage = new javax.swing.JLabel();
+        enemyDamage = new javax.swing.JLabel();
+        playerArmor = new javax.swing.JLabel();
+        enemyArmor = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -46,29 +65,29 @@ public class Combat extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        attackButton = new javax.swing.JButton();
+        blockButton = new javax.swing.JButton();
+        specialAttack = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Character Name");
+        playerName.setText("Character Name");
 
-        jLabel2.setText("Enemy Name");
+        enemyName.setText("Enemy Name");
 
-        jLabel3.setText("HP");
+        enemyHP.setText("HP");
 
-        jLabel4.setText("HP");
+        playerHP.setText("HP");
 
-        jLabel5.setText("Damage");
+        playerDamage.setText("Damage");
 
-        jLabel6.setText("Damage");
+        enemyDamage.setText("Damage");
 
-        jLabel7.setText("Armor");
+        playerArmor.setText("Armor");
 
-        jLabel8.setText("Armor");
+        enemyArmor.setText("Armor");
 
         jLabel9.setText("InfoBox");
 
@@ -86,11 +105,11 @@ public class Combat extends javax.swing.JFrame {
 
         jLabel16.setText("Flavor text");
 
-        jButton2.setText("Attack");
+        attackButton.setText("Attack");
 
-        jButton3.setText("Block");
+        blockButton.setText("Block");
 
-        jButton4.setText("Flee");
+        specialAttack.setText("Special");
 
         jLabel17.setText("Space for Character Image");
 
@@ -103,25 +122,21 @@ public class Combat extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(jLabel1)
+                        .addComponent(playerName)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
+                        .addComponent(enemyName)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3))
+                        .addComponent(enemyHP))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
+                        .addComponent(playerDamage)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel6))
+                        .addComponent(enemyDamage))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
+                        .addComponent(playerArmor)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel8))
+                        .addComponent(enemyArmor))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -133,11 +148,11 @@ public class Combat extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                                .addComponent(playerHP)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(hpBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(enemyBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,42 +161,45 @@ public class Combat extends javax.swing.JFrame {
                                     .addComponent(jLabel13)
                                     .addComponent(jLabel14)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton4)
+                                .addComponent(specialAttack)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton2)
+                                .addComponent(attackButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton3)))
-                        .addGap(0, 21, Short.MAX_VALUE)))
+                                .addComponent(blockButton)))
+                        .addGap(0, 21, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel18)))
                 .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(70, Short.MAX_VALUE)
+                .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel18))
-                .addGap(52, 52, 52)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
+                            .addComponent(playerName)
+                            .addComponent(enemyName))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jProgressBar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(enemyBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(hpBar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(playerHP)
+                    .addComponent(enemyHP, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                    .addComponent(playerDamage)
+                    .addComponent(enemyDamage))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7)))
+                    .addComponent(enemyArmor, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(playerArmor))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -200,9 +218,9 @@ public class Combat extends javax.swing.JFrame {
                 .addComponent(jLabel14)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(attackButton)
+                    .addComponent(blockButton)
+                    .addComponent(specialAttack))
                 .addGap(31, 31, 31))
         );
 
@@ -245,10 +263,14 @@ public class Combat extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton attackButton;
+    private javax.swing.JButton blockButton;
+    private javax.swing.JLabel enemyArmor;
+    private javax.swing.JProgressBar enemyBar;
+    private javax.swing.JLabel enemyDamage;
+    private javax.swing.JLabel enemyHP;
+    private javax.swing.JLabel enemyName;
+    private javax.swing.JProgressBar hpBar;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -258,16 +280,12 @@ public class Combat extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JProgressBar jProgressBar2;
     private javax.swing.JScrollBar jScrollBar1;
+    private javax.swing.JLabel playerArmor;
+    private javax.swing.JLabel playerDamage;
+    private javax.swing.JLabel playerHP;
+    private javax.swing.JLabel playerName;
+    private javax.swing.JButton specialAttack;
     // End of variables declaration//GEN-END:variables
 }

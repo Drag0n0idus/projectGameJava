@@ -5,8 +5,6 @@
  */
 package people;
 
-import java.util.Date;
-
 /**
  * Třída Human
  * @author Richard Míček (borrowed)
@@ -21,8 +19,8 @@ public class Human {
     private int strength = 10;
     private int dexterity = 10;
     private int intelligence = 10;
-    private float constitution = 10;
-    private float health = 20;
+    private float constitution = 10.0f;
+    private float health = 20.0f;
     private Sex sex = Sex.MAN;
     private Weapons weapon;
     private Armor chest = new Armor(Armor.Type.CHEST);
@@ -31,6 +29,8 @@ public class Human {
     private int exp = 0;
     private int level = 1;
     private int point = 0;
+    private int X = 0;
+    private int Y = 10;
     private String toc;
 
     public Human(String name){
@@ -176,6 +176,22 @@ public class Human {
 
     public void setHealth(float health) {
         this.health = health;
+    }
+
+    public int getX() {
+        return X;
+    }
+
+    public void setX(int X) {
+        this.X = X;
+    }
+
+    public int getY() {
+        return Y;
+    }
+
+    public void setY(int Y) {
+        this.Y = Y;
     }
     
     

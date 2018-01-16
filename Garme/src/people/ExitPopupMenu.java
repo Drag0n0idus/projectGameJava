@@ -59,7 +59,9 @@ public class ExitPopupMenu extends javax.swing.JFrame {
                     + character.getLevel() + ";"
                     + character.getPoint() + ";"
                     + character.getExp() + ";"
-                    + character.getHealth(); 
+                    + character.getHealth() + ";"
+                    + character.getX() + ";"
+                    + character.getY(); 
             bw.write(output);
             bw.newLine();
             bw.flush();

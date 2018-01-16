@@ -100,6 +100,9 @@ public class loadCharacter extends javax.swing.JFrame {
                     character.setPoint(Integer.parseInt(attr[18]));
                     character.setExp(Integer.parseInt(attr[19]));
                     character.setHealth(Float.parseFloat(attr[20]));
+                    character.setX(Integer.parseInt(attr[21]));
+                    character.setY(Integer.parseInt(attr[22]));
+                    
                     model.addElement(character);
                 }
                 i++;
