@@ -17,11 +17,13 @@ I still have to think of a way to make combat. I know it will be turn-based (som
 ### Combat
 - [x] Weapon classes [*Work of Richard*]
 - [x] Armor classes [*Work of Richard*]
-- [x] Damage counting (*How equipment affects damage output, armor, health*)
+- [x] Damage counting (*How equipment affects damage output, armor, health*) [*Work of Franta*]
+- [ ] Actual functioning combat window
 - [ ] Status effects (*How to get an enemy to skip a turn when stunned, how much damage to take of when poisoned, bleeding etc.*)
 ### World
-- [ ] Creating a map (*Make a grid-map, get it into a two dimensional array, define positions etc.*)
-- [ ] Movement (*How to move on said map*)
+- [x] Creating a map (*Make a grid-map, get it into a two dimensional array, define positions etc.*) [*Work of Franta*]
+- [x] Movement (*How to move on said map*) [*Work of Both*]
+- [x] Collisions [*Work of Both*]
 ### Equipment
 - [ ] Drop chance (*Defining how often loot will drop and what rarity (strength) it will be*)
 ### Functions
