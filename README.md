@@ -1,11 +1,11 @@
-# Simple 2D RPG made in Java (personal project)
-Personal (partially made for school) project - a simple 2D RPG i'll be making in Java. 
+# Simple 2D RPG made in Java (personal/school project)
+Personal (partially made for school) project - a simple 2D RPG we'll be making in Java. 
 
 The plan is to make a grid-map, have a main class for the human race, subclasses for ... well, classes (mage, knight, etc.). Other stuff will include equipment made from static objects, some damage math and such, some text based encounters.
 
-I still have to think of a way to make combat. I know it will be turn-based (somewhat easier to make), but the details are yet to be fleshed out.
+We still have to think of a way to make combat. We know it will be turn-based (somewhat easier to make), but the details are yet to be fleshed out.
 
-## What I have planned to do and whats already done
+## What we have planned to do and what we've already done
 ### Classes & Races
 - [x] Race Human (*Base atrributes for the human race*) [*Work of Richard*]
 - [x] Classes (*Mage, Warrior, Ranger - which attributes are better or worse for each class*) [*Work of Richard*]
