@@ -13,6 +13,7 @@ We still have to think of a way to make combat. We know it will be turn-based (s
 - [x] Start menu [*Work of Franta*]
 - [x] Inventory [*Work of Both*]
 - [x] Load window [*Work of Both*]
+- [x] Stat window [*Work of Franta*]
 - [x] Character Menu [*Work of Franta*]
 ### Combat
 - [x] Weapon classes [*Work of Richard*]
