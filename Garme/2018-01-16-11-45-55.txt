@@ -1,2 +1,2 @@
 class;name;strength;dexterity;intelligence;constitution;sex;toc;weaponName;weaponDmg;weaponType;chestName;chestArmor;helmetName;helmetArmor;shoesName;shoesArmor;health
-Warrior;not bob;13;8;11;12.0;MAN;2018-01-16-11-45-55;Rusty sword;2;SWORD;Banged up brestplate;5;Old bucket;3;Linen wraps;1;1;0;0;24.0;8;10
+Warrior;not bob;13;8;11;12.0;MAN;2018-01-16-11-45-55;Rusty sword;2;SWORD;Banged up brestplate;5;Old bucket;3;Linen wraps;1;1;0;0;24.0;7;10
