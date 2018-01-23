@@ -21,6 +21,9 @@ public class Combat extends javax.swing.JFrame {
     }
     
     public Combat(Human person) {
+        this.setResizable(false);
+        this.setUndecorated(true);
+        this.setVisible(true);
         initComponents();
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         character = person;

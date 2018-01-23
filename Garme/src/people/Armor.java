@@ -21,11 +21,11 @@ public class Armor {
         switch(type){
             case CHEST:
                 this.setName("Banged up brestplate");
-                this.setArmor(5);
+                this.setArmor(1);
                 break;
             case HELMET:
                 this.setName("Old bucket");
-                this.setArmor(3);
+                this.setArmor(0);
                 break;
             case SHOES:
                 this.setName("Linen wraps");

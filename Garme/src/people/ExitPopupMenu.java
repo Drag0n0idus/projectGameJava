@@ -25,6 +25,9 @@ public class ExitPopupMenu extends javax.swing.JFrame {
     }
     
     public ExitPopupMenu(Human person) {
+        this.setResizable(false);
+        this.setUndecorated(true);
+        this.setVisible(true);
         setTitle("Quit?");
         initComponents();
         character = person;

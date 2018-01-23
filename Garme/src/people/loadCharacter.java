@@ -30,6 +30,9 @@ public class loadCharacter extends javax.swing.JFrame {
      * Creates new form loadCharacter
      */
     public loadCharacter() {
+        this.setResizable(false);
+        this.setUndecorated(true);
+        this.setVisible(true);
         setTitle("Load Game");
         initComponents();
         charList.setModel(model);

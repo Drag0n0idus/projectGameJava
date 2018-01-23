@@ -212,7 +212,7 @@ public class Map extends JPanel implements KeyListener {
     public void keyPressed(KeyEvent e) {
             switch (e.getKeyCode()) {
                 case KeyEvent.VK_LEFT:
-                    //System.out.println("vlevo");
+                    System.out.println("vlevo");
                     if (p.x > 0) {
                         if (collision(this.p.x, this.p.y, e)) {
                             this.p.x--;
@@ -222,7 +222,7 @@ public class Map extends JPanel implements KeyListener {
                     //System.out.println(this.p.x);
                     break;
                 case KeyEvent.VK_RIGHT:
-                    //System.out.println("vpravo");
+                    System.out.println("vpravo");
                     if (p.x < NUM_COLS - 1) {
                         if (collision(this.p.x, this.p.y, e)) {
                             this.p.x++;

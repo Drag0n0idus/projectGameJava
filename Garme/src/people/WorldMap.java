@@ -68,7 +68,11 @@ public class WorldMap extends javax.swing.JFrame {
     public WorldMap(Human person) {  
         //inputPanel.setLayout(new BoxLayout(inputPanel, BoxLayout.LINE_AXIS));
         this.setResizable(false);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+        this.setUndecorated(true);
+        this.setVisible(true);
         initComponents(); 
+        
         map = new Map(person);
         map.init();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -237,6 +241,8 @@ public class WorldMap extends javax.swing.JFrame {
 
     private void statsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statsActionPerformed
         new Stats(character).setVisible(true);
+        setVisible(false);
+        dispose();
     }//GEN-LAST:event_statsActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed

@@ -12,7 +12,7 @@ import java.awt.Color;
  * @author František
  */
 public class Stats extends javax.swing.JFrame {
-
+    private Map map;
     private Human character;
     private int armor;
     private int str;
@@ -29,6 +29,9 @@ public class Stats extends javax.swing.JFrame {
     }
 
     public Stats(Human person) {
+        this.setResizable(false);
+        this.setUndecorated(true);
+        this.setVisible(true);
         initComponents();
         character = person;
         armor = character.getChest().getArmor() + character.getShoes().getArmor() + character.getHelmet().getArmor();
@@ -221,6 +224,7 @@ public class Stats extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        new WorldMap(character).setVisible(true);
         setVisible(false);
         dispose();
     }//GEN-LAST:event_backButtonActionPerformed

@@ -15,11 +15,17 @@ public class PopupInfoMenu extends javax.swing.JFrame {
      * Creates new form PopupInfoMenu
      */
     public PopupInfoMenu() {
+        this.setResizable(false);
+        this.setUndecorated(true);
+        this.setVisible(true);
         setTitle("Success!");
         initComponents();
     }
     
     public PopupInfoMenu(Human character) {
+        this.setResizable(false);
+        this.setUndecorated(true);
+        this.setVisible(true);
         setTitle("Success!");
         initComponents();
         infoLabel.setText("The character " + character.getName() + " was created succesfuly!");
@@ -27,6 +33,9 @@ public class PopupInfoMenu extends javax.swing.JFrame {
     }
     
     public PopupInfoMenu(String warning) {
+        this.setResizable(false);
+        this.setUndecorated(true);
+        this.setVisible(true);
         setTitle("No name chosen");
         initComponents();
         infoLabel.setText(warning);
@@ -34,6 +43,9 @@ public class PopupInfoMenu extends javax.swing.JFrame {
     }
 
     public PopupInfoMenu(String message, Human character){
+        this.setResizable(false);
+        this.setUndecorated(true);
+        this.setVisible(true);
         setTitle("Success!");
         initComponents();
         infoLabel.setText(message + character.getName());

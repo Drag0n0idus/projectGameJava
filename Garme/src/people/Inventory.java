@@ -20,6 +20,9 @@ public class Inventory extends javax.swing.JFrame {
     }
     
     public Inventory(Human person) {
+        this.setResizable(false);
+        this.setUndecorated(true);
+        this.setVisible(true);
         setTitle("Inventory");
         initComponents();
         character = person;
