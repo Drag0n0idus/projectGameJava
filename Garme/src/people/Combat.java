@@ -37,6 +37,10 @@ public class Combat extends javax.swing.JFrame {
         enemyName.setText(slime.getName());
         enemyDamage.setText("Damage: " + Integer.toString(slime.getDmg()));
         enemyHP.setText(slime.getHealthS());
+        
+        if(character instanceof Mage) pImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/magemm.png")));
+        else if(character instanceof Ranger) pImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/rangerm.png")));
+        else pImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/warriorm.png")));
     }
 
     /**
@@ -71,7 +75,7 @@ public class Combat extends javax.swing.JFrame {
         blockButton = new javax.swing.JButton();
         specialAttack = new javax.swing.JButton();
         pImage = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        eImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,7 +119,7 @@ public class Combat extends javax.swing.JFrame {
 
         pImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/rangerm.png"))); // NOI18N
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/slimempls.png"))); // NOI18N
+        eImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/slimempls.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -154,7 +158,7 @@ public class Combat extends javax.swing.JFrame {
                         .addGap(24, 24, 24))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(eImage, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(6, 6, 6)
@@ -183,7 +187,7 @@ public class Combat extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(eImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -269,13 +273,13 @@ public class Combat extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton attackButton;
     private javax.swing.JButton blockButton;
+    private javax.swing.JLabel eImage;
     private javax.swing.JLabel enemyArmor;
     private javax.swing.JProgressBar enemyBar;
     private javax.swing.JLabel enemyDamage;
     private javax.swing.JLabel enemyHP;
     private javax.swing.JLabel enemyName;
     private javax.swing.JProgressBar hpBar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
