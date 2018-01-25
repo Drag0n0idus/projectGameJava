@@ -6,6 +6,9 @@
 package people;
 
 import java.awt.Color;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import static people.PopupInfoMenu.device;
 
 /**
  *
@@ -24,6 +27,9 @@ public class Stats extends javax.swing.JFrame {
     /**
      * Creates new form Stats
      */
+    static GraphicsDevice device = GraphicsEnvironment
+        .getLocalGraphicsEnvironment().getScreenDevices()[0];
+    
     public Stats() {
         initComponents();
     }
@@ -33,6 +39,7 @@ public class Stats extends javax.swing.JFrame {
         this.setUndecorated(true);
         this.setVisible(true);
         initComponents();
+        device.setFullScreenWindow(this);
         character = person;
         armor = character.getChest().getArmor() + character.getShoes().getArmor() + character.getHelmet().getArmor();
         sLabel.setText("Strength: " + character.getStrengthS());
@@ -173,21 +180,21 @@ public class Stats extends javax.swing.JFrame {
                     .addComponent(aPoints))
                 .addGap(18, 18, 18)
                 .addComponent(resetButton)
-                .addGap(33, 33, 33))
+                .addContainerGap(33, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(expBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(63, 63, 63))
+                        .addContainerGap(264, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))))
+                        .addContainerGap(324, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(13, 13, 13)
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(expBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(expLabel))
@@ -217,7 +224,7 @@ public class Stats extends javax.swing.JFrame {
                     .addComponent(aPoints))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

@@ -1,2 +1,2 @@
 class;name;strength;dexterity;intelligence;constitution;sex;toc;weaponName;weaponDmg;weaponType;chestName;chestArmor;helmetName;helmetArmor;shoesName;shoesArmor;health
-Mage;Bobina;8;11;13;10.0;WOMAN;2018-01-23-08-08-09;Broken wand;2;WAND;Banged up brestplate;5;Old bucket;3;Linen wraps;1;1;0;0;20.0;7;10
+Mage;Bobina;8;11;13;10.0;WOMAN;2018-01-23-08-08-09;Broken wand;2;WAND;Banged up brestplate;5;Old bucket;3;Linen wraps;1;1;0;0;20.0;6;10

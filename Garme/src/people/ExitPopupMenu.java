@@ -5,6 +5,8 @@
  */
 package people;
 
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -19,6 +21,9 @@ public class ExitPopupMenu extends javax.swing.JFrame {
     /**
      * Creates new form ExitPopupMenu
      */
+    static GraphicsDevice device = GraphicsEnvironment
+        .getLocalGraphicsEnvironment().getScreenDevices()[0];
+    
     public ExitPopupMenu() {
         setTitle("Quit?");
         initComponents();
@@ -31,6 +36,7 @@ public class ExitPopupMenu extends javax.swing.JFrame {
         setTitle("Quit?");
         initComponents();
         character = person;
+        device.setFullScreenWindow(this);
     }
     
     public void saveChar(){
@@ -122,19 +128,19 @@ public class ExitPopupMenu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25))
+                        .addContainerGap(50, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(cancelButton)
                         .addGap(18, 18, 18)
                         .addComponent(quitButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(mainMenuButton)
-                        .addGap(19, 19, 19))))
+                        .addContainerGap(24, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

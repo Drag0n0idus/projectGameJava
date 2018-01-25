@@ -5,6 +5,10 @@
  */
 package people;
 
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import static people.ExitPopupMenu.device;
+
 /**
  *
  * @author František
@@ -14,6 +18,9 @@ public class Inventory extends javax.swing.JFrame {
     /**
      * Creates new form Inventory
      */
+    static GraphicsDevice device = GraphicsEnvironment
+        .getLocalGraphicsEnvironment().getScreenDevices()[0];
+    
     public Inventory() {
         setTitle("Inventory");
         initComponents();
@@ -25,6 +32,7 @@ public class Inventory extends javax.swing.JFrame {
         this.setVisible(true);
         setTitle("Inventory");
         initComponents();
+        device.setFullScreenWindow(this);
         character = person;
         nameLabel.setText("Name: " + character.getName());
         if(character.getSex() == Human.Sex.MAN) genderLabel.setText("Gender: Man");
@@ -110,7 +118,7 @@ public class Inventory extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addContainerGap(36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(quitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -142,7 +150,7 @@ public class Inventory extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nameLabel)
                     .addComponent(classLabel))

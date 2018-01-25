@@ -23,42 +23,49 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="189" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace pref="54" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="462" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="deleteButton" pref="77" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="contButton" max="32767" attributes="0"/>
-                          <Component id="backButton" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="nameLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="classLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="strLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="dxtLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="intLabel" max="32767" attributes="0"/>
+                          <Component id="conLabel" alignment="0" pref="501" max="32767" attributes="0"/>
+                          <Component id="genderLabel" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Component id="nameLabel" alignment="0" max="32767" attributes="0"/>
-                  <Component id="classLabel" alignment="0" max="32767" attributes="0"/>
-                  <Component id="strLabel" alignment="0" max="32767" attributes="0"/>
-                  <Component id="dxtLabel" alignment="0" max="32767" attributes="0"/>
-                  <Component id="intLabel" max="32767" attributes="0"/>
-                  <Component id="conLabel" alignment="0" max="32767" attributes="0"/>
-                  <Component id="genderLabel" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="deleteButton" min="-2" pref="160" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="backButton" min="-2" pref="160" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="contButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="31" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="pImage" min="-2" pref="210" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jScrollPane1" min="-2" pref="245" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="nameLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="classLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="genderLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="strLabel" min="-2" max="-2" attributes="0"/>
@@ -68,16 +75,18 @@
                       <Component id="intLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="conLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="pImage" pref="284" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="contButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="deleteButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="backButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="contButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="backButton" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="36" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -89,6 +98,9 @@
       <SubComponents>
         <Component class="javax.swing.JList" name="charList">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Ubuntu" size="36" style="0"/>
+            </Property>
             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
               <StringArray count="0"/>
             </Property>
@@ -104,6 +116,9 @@
     </Container>
     <Component class="javax.swing.JButton" name="backButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Ubuntu" size="36" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>
       <Events>
@@ -112,6 +127,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="contButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Ubuntu" size="36" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Continue"/>
       </Properties>
       <Events>
@@ -120,46 +138,77 @@
     </Component>
     <Component class="javax.swing.JLabel" name="nameLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Ubuntu" size="36" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Name"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="classLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Ubuntu" size="36" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Class"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="strLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Ubuntu" size="36" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Strength"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="dxtLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Ubuntu" size="36" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Dexterity"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="intLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Ubuntu" size="36" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Intelligence"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="conLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Ubuntu" size="36" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Constitution"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="genderLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Ubuntu" size="36" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Gender"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="deleteButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Ubuntu" size="36" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="pImage">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/people/images/warrior.png"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

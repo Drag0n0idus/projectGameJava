@@ -5,6 +5,8 @@
  */
 package people;
 
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import javax.swing.ImageIcon;
 
 /**
@@ -16,6 +18,10 @@ public class Combat extends javax.swing.JFrame {
     /**
      * Creates new form Combat
      */
+    
+    static GraphicsDevice device = GraphicsEnvironment
+        .getLocalGraphicsEnvironment().getScreenDevices()[0];
+    
     public Combat() {
         initComponents();
     }
@@ -40,8 +46,9 @@ public class Combat extends javax.swing.JFrame {
         enemyName.setText(slime.getName());
         enemyDamage.setText("Damage: " + Integer.toString(slime.getDmg()));
         enemyHP.setText(slime.getHealthS());
+        device.setFullScreenWindow(this);
         
-        if(character instanceof Mage) pImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/magemm.png")));
+        if(character instanceof Mage) pImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/magem.png")));
         else if(character instanceof Ranger) pImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/rangerm.png")));
         else pImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/warriorm.png")));
     }
@@ -122,14 +129,14 @@ public class Combat extends javax.swing.JFrame {
 
         pImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/rangerm.png"))); // NOI18N
 
-        eImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/slimempls.png"))); // NOI18N
+        eImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/slimem.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,7 +194,7 @@ public class Combat extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(eImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -232,7 +239,7 @@ public class Combat extends javax.swing.JFrame {
                     .addComponent(attackButton)
                     .addComponent(blockButton)
                     .addComponent(specialAttack))
-                .addGap(31, 31, 31))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

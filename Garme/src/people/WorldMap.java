@@ -9,10 +9,13 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import static people.Stats.device;
 
 /**
  *
@@ -28,12 +31,16 @@ public class WorldMap extends javax.swing.JFrame {
     /**
      * Creates new form WorldMap
      */
+    static GraphicsDevice device = GraphicsEnvironment
+        .getLocalGraphicsEnvironment().getScreenDevices()[0];
+    
     
     public WorldMap() {  
         this.setResizable(false);
         initComponents(); 
         map = new Map();
         map.init();
+        device.setFullScreenWindow(this);
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         map.setPreferredSize(new java.awt.Dimension(620, 620));
@@ -75,6 +82,7 @@ public class WorldMap extends javax.swing.JFrame {
         
         map = new Map(person);
         map.init();
+        device.setFullScreenWindow(this);
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         
         map.setPreferredSize(new java.awt.Dimension(620, 620));
@@ -207,12 +215,12 @@ public class WorldMap extends javax.swing.JFrame {
                                 .addComponent(hLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(18, 18, 18)
                                 .addComponent(healthBar, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(45, 45, 45))))
+                        .addContainerGap(69, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(picture, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -229,7 +237,7 @@ public class WorldMap extends javax.swing.JFrame {
                     .addComponent(help)
                     .addComponent(save, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(15, 15, 15))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();

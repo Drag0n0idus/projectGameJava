@@ -5,6 +5,8 @@
  */
 package people;
 
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -15,6 +17,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import javax.swing.DefaultListModel;
 import people.Human.Sex;
+import static people.WorldMap.device;
 
 /**
  *
@@ -29,12 +32,16 @@ public class loadCharacter extends javax.swing.JFrame {
     /**
      * Creates new form loadCharacter
      */
+    static GraphicsDevice device = GraphicsEnvironment
+        .getLocalGraphicsEnvironment().getScreenDevices()[0];
+    
     public loadCharacter() {
         this.setResizable(false);
         this.setUndecorated(true);
         this.setVisible(true);
         setTitle("Load Game");
         initComponents();
+        device.setFullScreenWindow(this);
         charList.setModel(model);
         whichCharacter();
     }
@@ -136,9 +143,11 @@ public class loadCharacter extends javax.swing.JFrame {
         conLabel = new javax.swing.JLabel();
         genderLabel = new javax.swing.JLabel();
         deleteButton = new javax.swing.JButton();
+        pImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        charList.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         charList.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 charListMouseClicked(evt);
@@ -146,6 +155,7 @@ public class loadCharacter extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(charList);
 
+        backButton.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,6 +163,7 @@ public class loadCharacter extends javax.swing.JFrame {
             }
         });
 
+        contButton.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         contButton.setText("Continue");
         contButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,20 +171,28 @@ public class loadCharacter extends javax.swing.JFrame {
             }
         });
 
+        nameLabel.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         nameLabel.setText("Name");
 
+        classLabel.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         classLabel.setText("Class");
 
+        strLabel.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         strLabel.setText("Strength");
 
+        dxtLabel.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         dxtLabel.setText("Dexterity");
 
+        intLabel.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         intLabel.setText("Intelligence");
 
+        conLabel.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         conLabel.setText("Constitution");
 
+        genderLabel.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         genderLabel.setText("Gender");
 
+        deleteButton.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         deleteButton.setText("Delete");
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,41 +200,48 @@ public class loadCharacter extends javax.swing.JFrame {
             }
         });
 
+        pImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/warrior.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(deleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(classLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(strLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(dxtLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(intLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(conLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
+                            .addComponent(genderLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(contButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(nameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(classLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(strLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dxtLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(intLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(conLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(genderLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(30, 30, 30))
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(contButton)
+                        .addContainerGap(31, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pImage, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(nameLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(classLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(genderLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(strLabel)
@@ -225,13 +251,15 @@ public class loadCharacter extends javax.swing.JFrame {
                         .addComponent(intLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(conLabel)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(pImage, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(contButton)
-                            .addComponent(deleteButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(backButton)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                            .addComponent(deleteButton)
+                            .addComponent(backButton)
+                            .addComponent(contButton)))
+                    .addComponent(jScrollPane1))
+                .addGap(97, 97, 97))
         );
 
         pack();
@@ -267,6 +295,9 @@ public class loadCharacter extends javax.swing.JFrame {
             dxtLabel.setText("Dexterity: " + person.getDexterityS());
             intLabel.setText("Intelligence: " + person.getIntelligenceS());
             conLabel.setText("Constitution: " + person.getConstitutionS());
+            if(person instanceof Mage) pImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/magemv.png")));
+        else if(person instanceof Ranger) pImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/rangermv.png")));
+        else pImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/people/images/warriormv.png")));
         }
     }//GEN-LAST:event_charListMouseClicked
 
@@ -350,6 +381,7 @@ public class loadCharacter extends javax.swing.JFrame {
     private javax.swing.JLabel intLabel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nameLabel;
+    private javax.swing.JLabel pImage;
     private javax.swing.JLabel strLabel;
     // End of variables declaration//GEN-END:variables
 }

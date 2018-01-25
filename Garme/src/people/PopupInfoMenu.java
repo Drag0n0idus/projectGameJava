@@ -5,6 +5,10 @@
  */
 package people;
 
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import static people.Inventory.device;
+
 /**
  *
  * @author Both
@@ -14,12 +18,16 @@ public class PopupInfoMenu extends javax.swing.JFrame {
     /**
      * Creates new form PopupInfoMenu
      */
+    static GraphicsDevice device = GraphicsEnvironment
+        .getLocalGraphicsEnvironment().getScreenDevices()[0];
+    
     public PopupInfoMenu() {
         this.setResizable(false);
         this.setUndecorated(true);
         this.setVisible(true);
         setTitle("Success!");
         initComponents();
+        device.setFullScreenWindow(this);
     }
     
     public PopupInfoMenu(Human character) {
@@ -28,6 +36,7 @@ public class PopupInfoMenu extends javax.swing.JFrame {
         this.setVisible(true);
         setTitle("Success!");
         initComponents();
+        device.setFullScreenWindow(this);
         infoLabel.setText("The character " + character.getName() + " was created succesfuly!");
         this.setAlwaysOnTop(true);
     }
@@ -38,6 +47,7 @@ public class PopupInfoMenu extends javax.swing.JFrame {
         this.setVisible(true);
         setTitle("No name chosen");
         initComponents();
+        device.setFullScreenWindow(this);
         infoLabel.setText(warning);
         this.setAlwaysOnTop(true);
     }
@@ -48,6 +58,7 @@ public class PopupInfoMenu extends javax.swing.JFrame {
         this.setVisible(true);
         setTitle("Success!");
         initComponents();
+        device.setFullScreenWindow(this);
         infoLabel.setText(message + character.getName());
         this.setAlwaysOnTop(true);
     }
@@ -83,16 +94,16 @@ public class PopupInfoMenu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(infoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap(30, Short.MAX_VALUE)
                 .addComponent(infoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(okButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();

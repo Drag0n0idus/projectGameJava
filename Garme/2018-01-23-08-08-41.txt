@@ -1,2 +1,2 @@
-class;name;strength;dexterity;intelligence;constitution;sex;toc;weaponName;weaponDmg;weaponType;chestName;chestArmor;helmetName;helmetArmor;shoesName;shoesArmor;level;attrPoints;exp
+class;name;strength;dexterity;intelligence;constitution;sex;toc;weaponName;weaponDmg;weaponType;chestName;chestArmor;helmetName;helmetArmor;shoesName;shoesArmor;health
 Ranger;Talion;11;13;8;11.0;MAN;2018-01-23-08-08-41;Old bow;2;BOW;Banged up brestplate;5;Old bucket;3;Linen wraps;1;1;0;0;22.0;0;10
